@@ -1,0 +1,93 @@
+/data/beegfs/home/gosalcds/miniconda3/envs/paper/lib/python3.11/site-packages/torch/nn/modules/rnn.py:71: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  warnings.warn("dropout option adds dropout after all but last "
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+wandb: Currently logged in as: luffnis (luffnis1). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.5
+wandb: Run data is saved locally in ./wandb/run-20240726_191348-2l3jrwbq
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vel_lstm_SOC_train_50_100
+wandb: ⭐️ View project at https://wandb.ai/luffnis1/lightning_logs
+wandb: 🚀 View run at https://wandb.ai/luffnis1/lightning_logs/runs/2l3jrwbq
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [1]
+
+  | Name          | Type    | Params
+------------------------------------------
+0 | preprocessing | LMU     | 210 K 
+1 | dropout_layer | Dropout | 0     
+2 | lstm          | LSTM    | 526 K 
+3 | fc_out        | Linear  | 51.4 K
+------------------------------------------
+787 K     Trainable params
+0         Non-trainable params
+787 K     Total params
+3.152     Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.
+Metric val/ADE improved. New best score: 1.762
+Epoch 0, global step 83: 'val/ADE' reached 1.76237 (best 1.76237), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/vel_lstm-v1.ckpt' as top 1
+Metric val/ADE improved by 0.122 >= min_delta = 0.0. New best score: 1.640
+Epoch 1, global step 166: 'val/ADE' reached 1.64006 (best 1.64006), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/vel_lstm-v1.ckpt' as top 1
+Epoch 2, global step 249: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.022 >= min_delta = 0.0. New best score: 1.618
+Epoch 3, global step 332: 'val/ADE' reached 1.61765 (best 1.61765), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/vel_lstm-v1.ckpt' as top 1
+Epoch 4, global step 415: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.060 >= min_delta = 0.0. New best score: 1.557
+Epoch 5, global step 498: 'val/ADE' reached 1.55738 (best 1.55738), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/vel_lstm-v1.ckpt' as top 1
+Metric val/ADE improved by 0.003 >= min_delta = 0.0. New best score: 1.554
+Epoch 6, global step 581: 'val/ADE' reached 1.55408 (best 1.55408), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/vel_lstm-v1.ckpt' as top 1
+Epoch 7, global step 664: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.032 >= min_delta = 0.0. New best score: 1.522
+Epoch 8, global step 747: 'val/ADE' reached 1.52240 (best 1.52240), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/vel_lstm-v1.ckpt' as top 1
+Metric val/ADE improved by 0.010 >= min_delta = 0.0. New best score: 1.513
+Epoch 9, global step 830: 'val/ADE' reached 1.51267 (best 1.51267), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/vel_lstm-v1.ckpt' as top 1
+Metric val/ADE improved by 0.026 >= min_delta = 0.0. New best score: 1.487
+Epoch 10, global step 913: 'val/ADE' reached 1.48691 (best 1.48691), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/vel_lstm-v1.ckpt' as top 1
+Epoch 11, global step 996: 'val/ADE' was not in top 1
+Epoch 12, global step 1079: 'val/ADE' was not in top 1
+Epoch 13, global step 1162: 'val/ADE' was not in top 1
+Epoch 14, global step 1245: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.074 >= min_delta = 0.0. New best score: 1.413
+Epoch 15, global step 1328: 'val/ADE' reached 1.41309 (best 1.41309), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/vel_lstm-v1.ckpt' as top 1
+Epoch 16, global step 1411: 'val/ADE' was not in top 1
+Epoch 17, global step 1494: 'val/ADE' was not in top 1
+Epoch 18, global step 1577: 'val/ADE' was not in top 1
+Epoch 19, global step 1660: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.010 >= min_delta = 0.0. New best score: 1.403
+Epoch 20, global step 1743: 'val/ADE' reached 1.40318 (best 1.40318), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/vel_lstm-v1.ckpt' as top 1
+Epoch 21, global step 1826: 'val/ADE' was not in top 1
+Epoch 22, global step 1909: 'val/ADE' was not in top 1
+Epoch 23, global step 1992: 'val/ADE' was not in top 1
+Epoch 24, global step 2075: 'val/ADE' was not in top 1
+Epoch 25, global step 2158: 'val/ADE' was not in top 1
+Epoch 26, global step 2241: 'val/ADE' was not in top 1
+Epoch 27, global step 2324: 'val/ADE' was not in top 1
+Epoch 28, global step 2407: 'val/ADE' was not in top 1
+Epoch 29, global step 2490: 'val/ADE' was not in top 1
+Epoch 30, global step 2573: 'val/ADE' was not in top 1
+Epoch 31, global step 2656: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.038 >= min_delta = 0.0. New best score: 1.365
+Epoch 32, global step 2739: 'val/ADE' reached 1.36479 (best 1.36479), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/vel_lstm-v1.ckpt' as top 1
+Epoch 33, global step 2822: 'val/ADE' was not in top 1
+Epoch 34, global step 2905: 'val/ADE' was not in top 1
+Epoch 35, global step 2988: 'val/ADE' was not in top 1
+Epoch 36, global step 3071: 'val/ADE' was not in top 1
+Epoch 37, global step 3154: 'val/ADE' was not in top 1
+Epoch 38, global step 3237: 'val/ADE' was not in top 1
+Epoch 39, global step 3320: 'val/ADE' was not in top 1
+Epoch 40, global step 3403: 'val/ADE' was not in top 1
+Epoch 41, global step 3486: 'val/ADE' was not in top 1
+Epoch 42, global step 3569: 'val/ADE' was not in top 1
+Epoch 43, global step 3652: 'val/ADE' was not in top 1
+Epoch 44, global step 3735: 'val/ADE' was not in top 1
+Epoch 45, global step 3818: 'val/ADE' was not in top 1
+Epoch 46, global step 3901: 'val/ADE' was not in top 1
+Epoch 47, global step 3984: 'val/ADE' was not in top 1
+Epoch 48, global step 4067: 'val/ADE' was not in top 1
+Epoch 49, global step 4150: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.022 >= min_delta = 0.0. New best score: 1.343
+Epoch 50, global step 4233: 'val/ADE' reached 1.34275 (best 1.34275), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/vel_lstm-v1.ckpt' as top 1
+Epoch 51, global step 4316: 'val/ADE' was not in top 1
+Epoch 52, global step 4399: 'val/ADE' was not in top 1
+Epoch 53, global step 4482: 'val/ADE' was not in top 1
