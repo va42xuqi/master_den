@@ -82,3 +82,21 @@ Epoch 33, global step 12852: 'val/ADE' reached 2.46619 (best 2.46619), saving mo
 Epoch 34, global step 13230: 'val/ADE' was not in top 1
 Epoch 35, global step 13608: 'val/ADE' was not in top 1
 Epoch 36, global step 13986: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.032 >= min_delta = 0.0. New best score: 2.435
+Epoch 37, global step 14364: 'val/ADE' reached 2.43454 (best 2.43454), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_bitnet.ckpt' as top 1
+Metric val/ADE improved by 0.038 >= min_delta = 0.0. New best score: 2.396
+Epoch 38, global step 14742: 'val/ADE' reached 2.39614 (best 2.39614), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_bitnet.ckpt' as top 1
+Epoch 39, global step 15120: 'val/ADE' was not in top 1
+Epoch 40, global step 15498: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.048 >= min_delta = 0.0. New best score: 2.348
+Epoch 41, global step 15876: 'val/ADE' reached 2.34819 (best 2.34819), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_bitnet.ckpt' as top 1
+Epoch 42, global step 16254: 'val/ADE' was not in top 1
+Epoch 43, global step 16632: 'val/ADE' was not in top 1
+Epoch 44, global step 17010: 'val/ADE' was not in top 1
+Epoch 45, global step 17388: 'val/ADE' was not in top 1
+Epoch 46, global step 17766: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.111 >= min_delta = 0.0. New best score: 2.237
+Epoch 47, global step 18144: 'val/ADE' reached 2.23678 (best 2.23678), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_bitnet.ckpt' as top 1
+Metric val/ADE improved by 0.010 >= min_delta = 0.0. New best score: 2.226
+Epoch 48, global step 18522: 'val/ADE' reached 2.22635 (best 2.22635), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_bitnet.ckpt' as top 1
+Epoch 49, global step 18900: 'val/ADE' was not in top 1
