@@ -1,0 +1,29 @@
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+wandb: Currently logged in as: luffnis (luffnis1). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.5
+wandb: Run data is saved locally in ./wandb/run-20240726_185348-d72gyyuy
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run uni_lmu_SOC_train_50_100
+wandb: ⭐️ View project at https://wandb.ai/luffnis1/lightning_logs
+wandb: 🚀 View run at https://wandb.ai/luffnis1/lightning_logs/runs/d72gyyuy
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [2]
+
+  | Name            | Type   | Params
+-------------------------------------------
+0 | x_lmu           | LMU    | 152 K 
+1 | y_lmu           | LMU    | 152 K 
+2 | x_preprocessing | LMU    | 99.2 K
+3 | y_preprocessing | LMU    | 99.2 K
+4 | x_fc_out        | Linear | 25.7 K
+5 | y_fc_out        | Linear | 25.7 K
+-------------------------------------------
+554 K     Trainable params
+0         Non-trainable params
+554 K     Total params
+2.217     Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.
+Metric val/ADE improved. New best score: 2.805
+Epoch 0, global step 83: 'val/ADE' reached 2.80485 (best 2.80485), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_lmu.ckpt' as top 1

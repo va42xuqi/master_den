@@ -77,3 +77,64 @@ Epoch 36, global step 3515: 'val/ADE' was not in top 1
 Epoch 37, global step 3610: 'val/ADE' was not in top 1
 Metric val/ADE improved by 0.010 >= min_delta = 0.0. New best score: 1.909
 Epoch 38, global step 3705: 'val/ADE' reached 1.90886 (best 1.90886), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_trafo_pretrain.ckpt' as top 1
+Epoch 39, global step 3800: 'val/ADE' was not in top 1
+Epoch 40, global step 3895: 'val/ADE' was not in top 1
+Epoch 41, global step 3990: 'val/ADE' was not in top 1
+Epoch 42, global step 4085: 'val/ADE' was not in top 1
+Epoch 43, global step 4180: 'val/ADE' was not in top 1
+Epoch 44, global step 4275: 'val/ADE' was not in top 1
+Epoch 45, global step 4370: 'val/ADE' was not in top 1
+Epoch 46, global step 4465: 'val/ADE' was not in top 1
+Epoch 47, global step 4560: 'val/ADE' was not in top 1
+Epoch 48, global step 4655: 'val/ADE' was not in top 1
+Epoch 49, global step 4750: 'val/ADE' was not in top 1
+Epoch 50, global step 4845: 'val/ADE' was not in top 1
+Epoch 51, global step 4940: 'val/ADE' was not in top 1
+Epoch 52, global step 5035: 'val/ADE' was not in top 1
+Epoch 53, global step 5130: 'val/ADE' was not in top 1
+Epoch 54, global step 5225: 'val/ADE' was not in top 1
+Epoch 55, global step 5320: 'val/ADE' was not in top 1
+Epoch 56, global step 5415: 'val/ADE' was not in top 1
+Epoch 57, global step 5510: 'val/ADE' was not in top 1
+Monitored metric val/ADE did not improve in the last 20 records. Best score: 1.909. Signaling Trainer to stop.
+Epoch 58, global step 5605: 'val/ADE' was not in top 1
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [3]
+SLURM auto-requeueing enabled. Setting signal handlers.
+wandb: - 1205.017 MB of 1205.017 MB uploadedwandb: \ 1205.017 MB of 1205.050 MB uploadedwandb: | 1205.017 MB of 1205.050 MB uploadedwandb: / 1205.050 MB of 1205.050 MB uploadedwandb: 
+wandb: Run history:
+wandb:   CPU energy consumption (kWh) ▆▆▆▆▁▆▆▆▆▇▆▆▆▆▇▆▆▆▆▇▁▆▇▆▆▁▆▇▆▇▁▇▆▇▆█▆▆▇▅
+wandb:   GPU energy consumption (kWh) ▇███▁▇███▇▇▇▇█▇▇███▇▁██▇█▁▇▇██▁▇██▇▇██▇▇
+wandb:   RAM energy consumption (kWh) ▇▇▇▇▁▇▇▇▇▇▇▇▆▇▇▇▇▇▇▇▁▇▆▇▇▁▇▇▇█▁▆▇▇▇▇▇▇▇▆
+wandb: Total energy consumption (kWh) ▇███▁▇██▇▇▇▇▇█▇▇███▇▁██▇█▁▇▇██▁▇██▇▇██▇▇
+wandb:                          epoch ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇███
+wandb:               train/loss_epoch █▄▃▃▂▂▂▃▂▃▂▂▂▂▁▂▂▁▁▂▂▁▂▂▂▁▁▂▁▂▁▁▂▂▂▁▁▁▁▁
+wandb:                train/loss_step ▆▂▆▂▃▇▅▄▁▃▅▄▂▃▄▅▅▆▃▆▄▄▅▃▆▄▄▅▄▂▄▃▆█▆▅▃▂▄▃
+wandb:            trainer/global_step ▁▁▁▁▂▁▂▁▂▃▃▃▃▁▄▁▄▁▄▁▅▅▅▅▅▁▆▁▆▁▇▇▇▇▇▁█▁█▁
+wandb:                  val/ADE_epoch ▅█▅▄▄▅▃▃▃▃▃▂▂▂▂▂▂▂▂▃▂▂▁▁▂▂▂▃▁▂▃▁▁▁▂▂▂▁▃▂
+wandb:                   val/ADE_step ▆█▆▅▆▇▄▆▆▇▄▄▅▅▃▄▄█▄▁▇▄▁▃▄▅▆▃▅▅▂▅▄▇▅▃▄▅▅▅
+wandb:                  val/FDE_epoch ▆█▆▅▄▆▄▃▄▄▃▁▄▂▄▂▂▃▃▅▃▄▂▁▂▃▃▄▂▃▅▂▂▃▂▂▃▂▄▄
+wandb:                   val/FDE_step ▆▇▅▃▆▇▃▆▅█▅▃▅▅▄▄▃█▄▁▇▄▁▄▃▅▆▂▆▅▂▄▃█▄▃▄▅▄▄
+wandb:               val/NL_ADE_epoch ▅█▅▅▆█▅▄▄▆▆▃▂▅▄▂▄▃▃▅▃▄▁▃▄▄▄▄▂▃▆▃▃▃▃▂▅▄▃▄
+wandb:                val/NL_ADE_step ▃▅▄▃▄█▃▃▃▅▆▂▅▆▃▄▄▆▃▂▄▅▁▂▂▃▆▃▂▃▂▄▄▅▃▂▅▄▃▅
+wandb: 
+wandb: Run summary:
+wandb:   CPU energy consumption (kWh) 1e-05
+wandb:   GPU energy consumption (kWh) 9e-05
+wandb:   RAM energy consumption (kWh) 0.0
+wandb: Total energy consumption (kWh) 0.0001
+wandb:                          epoch 59
+wandb:               train/loss_epoch 1.71593
+wandb:                train/loss_step 1.61937
+wandb:            trainer/global_step 5605
+wandb:                  val/ADE_epoch 1.97814
+wandb:                   val/ADE_step 2.03956
+wandb:                  val/FDE_epoch 4.20581
+wandb:                   val/FDE_step 4.21239
+wandb:               val/NL_ADE_epoch 2.3329
+wandb:                val/NL_ADE_step 2.41061
+wandb: 
+wandb: 🚀 View run uni_trafo_NBA_train_50_100 at: https://wandb.ai/luffnis1/lightning_logs/runs/jxtci7b5
+wandb: ⭐️ View project at: https://wandb.ai/luffnis1/lightning_logs
+wandb: Synced 6 W&B file(s), 0 media file(s), 11 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240726_173519-jxtci7b5/logs
+wandb: WARNING The new W&B backend becomes opt-out in version 0.18.0; try it out with `wandb.require("core")`! See https://wandb.me/wandb-core for more information.

@@ -47,3 +47,38 @@ Epoch 15, global step 1520: 'val/ADE' reached 1.91991 (best 1.91991), saving mod
 Epoch 16, global step 1615: 'val/ADE' was not in top 1
 Epoch 17, global step 1710: 'val/ADE' was not in top 1
 Epoch 18, global step 1805: 'val/ADE' was not in top 1
+Epoch 19, global step 1900: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.061 >= min_delta = 0.0. New best score: 1.859
+Epoch 20, global step 1995: 'val/ADE' reached 1.85911 (best 1.85911), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/oslmu_pretrain.ckpt' as top 1
+Epoch 21, global step 2090: 'val/ADE' was not in top 1
+Epoch 22, global step 2185: 'val/ADE' was not in top 1
+Epoch 23, global step 2280: 'val/ADE' was not in top 1
+Epoch 24, global step 2375: 'val/ADE' was not in top 1
+Epoch 25, global step 2470: 'val/ADE' was not in top 1
+Epoch 26, global step 2565: 'val/ADE' was not in top 1
+Epoch 27, global step 2660: 'val/ADE' was not in top 1
+Epoch 28, global step 2755: 'val/ADE' was not in top 1
+Epoch 29, global step 2850: 'val/ADE' was not in top 1
+Epoch 30, global step 2945: 'val/ADE' was not in top 1
+Epoch 31, global step 3040: 'val/ADE' was not in top 1
+Epoch 32, global step 3135: 'val/ADE' was not in top 1
+Epoch 33, global step 3230: 'val/ADE' was not in top 1
+Epoch 34, global step 3325: 'val/ADE' was not in top 1
+Epoch 35, global step 3420: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.035 >= min_delta = 0.0. New best score: 1.824
+Epoch 36, global step 3515: 'val/ADE' reached 1.82415 (best 1.82415), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/oslmu_pretrain.ckpt' as top 1
+Epoch 37, global step 3610: 'val/ADE' was not in top 1
+Epoch 38, global step 3705: 'val/ADE' was not in top 1
+Epoch 39, global step 3800: 'val/ADE' was not in top 1
+Epoch 40, global step 3895: 'val/ADE' was not in top 1
+Epoch 41, global step 3990: 'val/ADE' was not in top 1
+Epoch 42, global step 4085: 'val/ADE' was not in top 1
+Epoch 43, global step 4180: 'val/ADE' was not in top 1
+Epoch 44, global step 4275: 'val/ADE' was not in top 1
+Epoch 45, global step 4370: 'val/ADE' was not in top 1
+Epoch 46, global step 4465: 'val/ADE' was not in top 1
+Epoch 47, global step 4560: 'val/ADE' was not in top 1
+Epoch 48, global step 4655: 'val/ADE' was not in top 1
+Epoch 49, global step 4750: 'val/ADE' was not in top 1
+Epoch 50, global step 4845: 'val/ADE' was not in top 1
+Epoch 51, global step 4940: 'val/ADE' was not in top 1

@@ -1,0 +1,35 @@
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+wandb: Currently logged in as: luffnis (luffnis1). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.5
+wandb: Run data is saved locally in ./wandb/run-20240726_184424-f6ay9qwd
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run os_bitnet_SOC_train_50_100
+wandb: ⭐️ View project at https://wandb.ai/luffnis1/lightning_logs
+wandb: 🚀 View run at https://wandb.ai/luffnis1/lightning_logs/runs/f6ay9qwd
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [3]
+
+  | Name    | Type       | Params
+---------------------------------------
+0 | linear  | Linear     | 26.9 K
+1 | encoder | GPTLike    | 4.8 M 
+2 | cnn     | CNNEncoder | 77.1 K
+3 | fc_out  | Linear     | 51.4 K
+4 | dropout | Dropout    | 0     
+---------------------------------------
+4.9 M     Trainable params
+0         Non-trainable params
+4.9 M     Total params
+19.688    Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.
+Metric val/ADE improved. New best score: 3.256
+Epoch 0, global step 331: 'val/ADE' reached 3.25596 (best 3.25596), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/os_bitnet.ckpt' as top 1
+Metric val/ADE improved by 0.182 >= min_delta = 0.0. New best score: 3.074
+Epoch 1, global step 662: 'val/ADE' reached 3.07407 (best 3.07407), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/os_bitnet.ckpt' as top 1
+Epoch 2, global step 993: 'val/ADE' was not in top 1
+Epoch 3, global step 1324: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.003 >= min_delta = 0.0. New best score: 3.071
+Epoch 4, global step 1655: 'val/ADE' reached 3.07086 (best 3.07086), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/os_bitnet.ckpt' as top 1
+Epoch 5, global step 1986: 'val/ADE' was not in top 1
