@@ -1,0 +1,13 @@
+plots
+build
+badass_trajectory_predictor.egg-info
+logger
+log
+__pycache__
+.idea
+check_parquet.
+wandb
+lightning_logs
+data
+data.tar.gz
+checkpoints
