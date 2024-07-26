@@ -23,4 +23,4 @@ ARCH=${ARCHS[$ARCH_IDX]}
 SCENE=${SCENES[$SCENE_IDX]}
 
 # Run pretraining
-srun --gres=gpu:1 python train.py --arch=$ARCH --scene=$SCENE --mode=train --pretrain=True
+srun --gres=gpu:1 python train.py --arch=$ARCH --scene=$SCENE --mode=train --pretrain

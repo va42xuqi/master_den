@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Job ID of the pretraining job
-PRETRAIN_JOB_ID=50360
+PRETRAIN_JOB_ID=50512
 
 # Function to check if the job is still running
 check_job_status() {

@@ -154,7 +154,7 @@ class OneStepModel(pl.LightningModule):
         emissions = self.train_tracker.stop_task("train")
 
         # Extract relevant metrics from EmissionsData
-        total_energy = emissions.total_energy  # Total energy consumed in kWh
+        total_energy = emissions.energy_consumed  # Total energy consumed in kWh
         gpu_energy = emissions.gpu_energy  # GPU energy consumption in kWh
         cpu_energy = emissions.cpu_energy  # CPU energy consumption in kWh
         ram_energy = emissions.ram_energy  # RAM energy consumption in kWh
@@ -179,18 +179,18 @@ class OneStepModel(pl.LightningModule):
         # Extract relevant metrics from the EmissionsData object
         total_energy = emissions.energy_consumed  # Total energy consumed in kWh
         gpu_energy = emissions.gpu_energy  # GPU energy consumption in kWh
+        cpu_energy = emissions.cpu_energy  # CPU energy consumption in kWh
+        ram_energy = emissions.ram_energy  # RAM energy consumption in kWh
+
 
         # Log scalar values
-        self.log(
-            "val/total_energy(kWh) ",
-            total_energy,
-            on_step=False,
-            on_epoch=True,
-            prog_bar=True,
-        )
-        self.log(
-            "val/gpu_energy(kWh)",
-            gpu_energy,
+        self.log_dict(
+            {
+                "Total energy consumption (kWh)": total_energy,
+                "GPU energy consumption (kWh)": gpu_energy,
+                "CPU energy consumption (kWh)": cpu_energy,
+                "RAM energy consumption (kWh)": ram_energy,
+            },
             on_step=False,
             on_epoch=True,
             prog_bar=True,
@@ -201,8 +201,24 @@ class OneStepModel(pl.LightningModule):
 
     def on_test_epoch_end(self):
         emissions = self.test_tracker.stop_task("test")
-        self.log(
-            "test/emissions", emissions, on_step=False, on_epoch=True, prog_bar=True
+        
+        # Extract relevant metrics from the EmissionsData object
+        total_energy = emissions.energy_consumed  # Total energy consumed in kWh
+        gpu_energy = emissions.gpu_energy  # GPU energy consumption in kWh
+        cpu_energy = emissions.cpu_energy  # CPU energy consumption in kWh
+        ram_energy = emissions.ram_energy  # RAM energy consumption in kWh
+
+        # Log scalar values
+        self.log_dict(
+            {
+                "Total energy consumption (kWh)": total_energy,
+                "GPU energy consumption (kWh)": gpu_energy,
+                "CPU energy consumption (kWh)": cpu_energy,
+                "RAM energy consumption (kWh)": ram_energy,
+            },
+            on_step=False,
+            on_epoch=True,
+            prog_bar=True,
         )
 
     def step(self, batch, num_batches=10, shuffle=True):

@@ -1,0 +1,2 @@
+slurmstepd: error: *** STEP 50507.0 ON hpc-gpu-05 CANCELLED AT 2024-07-26T16:31:24 ***
+slurmstepd: error: *** JOB 50507 ON hpc-gpu-05 CANCELLED AT 2024-07-26T16:31:24 ***

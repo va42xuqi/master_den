@@ -1,0 +1,44 @@
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+wandb: Currently logged in as: luffnis (luffnis1). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.5
+wandb: Run data is saved locally in ./wandb/run-20240726_163206-tufivapg
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run uni_lmu_SOC_train_50_100
+wandb: ⭐️ View project at https://wandb.ai/luffnis1/lightning_logs
+wandb: 🚀 View run at https://wandb.ai/luffnis1/lightning_logs/runs/tufivapg
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name            | Type   | Params
+-------------------------------------------
+0 | x_lmu           | LMU    | 152 K 
+1 | y_lmu           | LMU    | 152 K 
+2 | x_preprocessing | LMU    | 88.5 K
+3 | y_preprocessing | LMU    | 88.5 K
+4 | x_fc_out        | Linear | 25.7 K
+5 | y_fc_out        | Linear | 25.7 K
+-------------------------------------------
+532 K     Trainable params
+0         Non-trainable params
+532 K     Total params
+2.131     Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.
+wandb: 429 encountered (Filestream rate limit exceeded, retrying in 2.2 seconds.), retrying request
+wandb: 429 encountered (Filestream rate limit exceeded, retrying in 4.1 seconds.), retrying request
+wandb: 429 encountered (Filestream rate limit exceeded, retrying in 2.2 seconds.), retrying request
+wandb: 429 encountered (Filestream rate limit exceeded, retrying in 4.5 seconds.), retrying request
+Metric val/ADE improved. New best score: 2.472
+Epoch 0, global step 83: 'val/ADE' reached 2.47167 (best 2.47167), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_lmu_pretrain.ckpt' as top 1
+Metric val/ADE improved by 0.363 >= min_delta = 0.0. New best score: 2.109
+Epoch 1, global step 166: 'val/ADE' reached 2.10913 (best 2.10913), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_lmu_pretrain.ckpt' as top 1
+Epoch 2, global step 249: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.224 >= min_delta = 0.0. New best score: 1.885
+Epoch 3, global step 332: 'val/ADE' reached 1.88497 (best 1.88497), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_lmu_pretrain.ckpt' as top 1
+Epoch 4, global step 415: 'val/ADE' was not in top 1
+Epoch 5, global step 498: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.035 >= min_delta = 0.0. New best score: 1.850
+Epoch 6, global step 581: 'val/ADE' reached 1.84963 (best 1.84963), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_lmu_pretrain.ckpt' as top 1
+Epoch 7, global step 664: 'val/ADE' was not in top 1
+Epoch 8, global step 747: 'val/ADE' was not in top 1
