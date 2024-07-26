@@ -194,3 +194,74 @@ Epoch 132, global step 11039: 'val/ADE' reached 1.75617 (best 1.75617), saving m
 Epoch 133, global step 11122: 'val/ADE' was not in top 1
 Metric val/ADE improved by 0.016 >= min_delta = 0.0. New best score: 1.740
 Epoch 134, global step 11205: 'val/ADE' reached 1.74040 (best 1.74040), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_bitnet-v1.ckpt' as top 1
+Metric val/ADE improved by 0.065 >= min_delta = 0.0. New best score: 1.675
+Epoch 135, global step 11288: 'val/ADE' reached 1.67509 (best 1.67509), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_bitnet-v1.ckpt' as top 1
+Epoch 136, global step 11371: 'val/ADE' was not in top 1
+Epoch 137, global step 11454: 'val/ADE' was not in top 1
+Epoch 138, global step 11537: 'val/ADE' was not in top 1
+Epoch 139, global step 11620: 'val/ADE' was not in top 1
+Epoch 140, global step 11703: 'val/ADE' was not in top 1
+Epoch 141, global step 11786: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.020 >= min_delta = 0.0. New best score: 1.655
+Epoch 142, global step 11869: 'val/ADE' reached 1.65479 (best 1.65479), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_bitnet-v1.ckpt' as top 1
+Epoch 143, global step 11952: 'val/ADE' was not in top 1
+Epoch 144, global step 12035: 'val/ADE' was not in top 1
+Epoch 145, global step 12118: 'val/ADE' was not in top 1
+Epoch 146, global step 12201: 'val/ADE' was not in top 1
+Epoch 147, global step 12284: 'val/ADE' was not in top 1
+Epoch 148, global step 12367: 'val/ADE' was not in top 1
+Epoch 149, global step 12450: 'val/ADE' was not in top 1
+Epoch 150, global step 12533: 'val/ADE' was not in top 1
+Epoch 151, global step 12616: 'val/ADE' was not in top 1
+Epoch 152, global step 12699: 'val/ADE' was not in top 1
+Epoch 153, global step 12782: 'val/ADE' was not in top 1
+Epoch 154, global step 12865: 'val/ADE' was not in top 1
+Epoch 155, global step 12948: 'val/ADE' was not in top 1
+Epoch 156, global step 13031: 'val/ADE' was not in top 1
+Epoch 157, global step 13114: 'val/ADE' was not in top 1
+Epoch 158, global step 13197: 'val/ADE' was not in top 1
+Epoch 159, global step 13280: 'val/ADE' was not in top 1
+Epoch 160, global step 13363: 'val/ADE' was not in top 1
+Epoch 161, global step 13446: 'val/ADE' was not in top 1
+Monitored metric val/ADE did not improve in the last 20 records. Best score: 1.655. Signaling Trainer to stop.
+Epoch 162, global step 13529: 'val/ADE' was not in top 1
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [2]
+SLURM auto-requeueing enabled. Setting signal handlers.
+wandb: - 3776.677 MB of 3776.677 MB uploadedwandb: \ 3776.677 MB of 3776.721 MB uploadedwandb: | 3776.721 MB of 3776.721 MB uploadedwandb: 
+wandb: Run history:
+wandb:   CPU energy consumption (kWh) ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█
+wandb:   GPU energy consumption (kWh) ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█
+wandb:   RAM energy consumption (kWh) ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█
+wandb: Total energy consumption (kWh) ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█
+wandb:                          epoch ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇▇███
+wandb:               train/loss_epoch █▅▅▅▄▄▄▄▃▃▃▃▃▃▂▃▂▂▂▂▂▂▂▂▂▂▂▂▁▂▁▁▁▁▁▁▁▁▁▁
+wandb:                train/loss_step █▅▄▄▄▂▃▄▃▃▃▂▂▂▂▃▂▂▂▂▃▃▃▁▃▂▂▂▂▁▁▂▂▂▂▂▂▂▁▁
+wandb:            trainer/global_step ▁▁▁▁▁▂▂▂▂▁▁▃▃▃▁▁▄▄▄▅▁▁▅▅▅▁▁▆▆▆▇▁▁▇▇▇▁▁█▁
+wandb:                  val/ADE_epoch █▇▇▆▆▆▅▅▄▄▄▅▄▄▄▃▃▃▃▃▃▃▃▃▃▃▃▂▂▂▂▂▂▁▂▁▁▁▁▁
+wandb:                   val/ADE_step █▇▆▆▆▅▅▅▄▄▅▃▄▃▃▄▄▄▄▃▃▅▃▃▃▃▃▃▃▂▂▂▂▂▁▂▂▁▁▂
+wandb:                  val/FDE_epoch █▇▆▆▆▅▅▄▄▄▄▄▃▃▃▃▃▃▂▃▃▂▃▂▃▃▃▂▂▂▂▂▂▁▂▁▁▁▁▁
+wandb:                   val/FDE_step █▇▆▅▆▅▄▄▃▄▄▃▃▃▃▄▃▃▃▃▃▅▃▃▄▃▃▃▃▂▃▂▃▂▁▂▃▁▂▂
+wandb:               val/NL_ADE_epoch █▇▆▆▆▆▅▅▄▄▄▄▄▄▃▃▃▃▃▃▃▃▃▃▃▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁
+wandb:                val/NL_ADE_step █▇▆▆▇▅▅▅▄▄▄▃▃▃▃▄▃▄▄▃▃▅▃▄▃▃▃▃▃▂▂▂▂▂▁▂▂▁▁▂
+wandb: 
+wandb: Run summary:
+wandb:   CPU energy consumption (kWh) 3e-05
+wandb:   GPU energy consumption (kWh) 0.00016
+wandb:   RAM energy consumption (kWh) 0.0
+wandb: Total energy consumption (kWh) 0.00019
+wandb:                          epoch 163
+wandb:               train/loss_epoch 1.26158
+wandb:                train/loss_step 1.40889
+wandb:            trainer/global_step 13529
+wandb:                  val/ADE_epoch 1.75436
+wandb:                   val/ADE_step 1.82852
+wandb:                  val/FDE_epoch 4.12962
+wandb:                   val/FDE_step 4.33822
+wandb:               val/NL_ADE_epoch 1.93812
+wandb:                val/NL_ADE_step 1.96661
+wandb: 
+wandb: 🚀 View run uni_bitnet_SOC_train_50_100 at: https://wandb.ai/luffnis1/lightning_logs/runs/k9u1l18z
+wandb: ⭐️ View project at: https://wandb.ai/luffnis1/lightning_logs
+wandb: Synced 6 W&B file(s), 0 media file(s), 34 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240726_190014-k9u1l18z/logs
+wandb: WARNING The new W&B backend becomes opt-out in version 0.18.0; try it out with `wandb.require("core")`! See https://wandb.me/wandb-core for more information.
