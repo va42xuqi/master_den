@@ -42,3 +42,29 @@ Metric val/ADE improved by 0.035 >= min_delta = 0.0. New best score: 1.850
 Epoch 6, global step 581: 'val/ADE' reached 1.84963 (best 1.84963), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_lmu_pretrain.ckpt' as top 1
 Epoch 7, global step 664: 'val/ADE' was not in top 1
 Epoch 8, global step 747: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.182 >= min_delta = 0.0. New best score: 1.667
+Epoch 9, global step 830: 'val/ADE' reached 1.66724 (best 1.66724), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_lmu_pretrain.ckpt' as top 1
+Epoch 10, global step 913: 'val/ADE' was not in top 1
+Epoch 11, global step 996: 'val/ADE' was not in top 1
+Epoch 12, global step 1079: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.117 >= min_delta = 0.0. New best score: 1.550
+Epoch 13, global step 1162: 'val/ADE' reached 1.55017 (best 1.55017), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_lmu_pretrain.ckpt' as top 1
+Epoch 14, global step 1245: 'val/ADE' was not in top 1
+Epoch 15, global step 1328: 'val/ADE' was not in top 1
+Epoch 16, global step 1411: 'val/ADE' was not in top 1
+Epoch 17, global step 1494: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.029 >= min_delta = 0.0. New best score: 1.521
+Epoch 18, global step 1577: 'val/ADE' reached 1.52104 (best 1.52104), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_lmu_pretrain.ckpt' as top 1
+Epoch 19, global step 1660: 'val/ADE' was not in top 1
+Epoch 20, global step 1743: 'val/ADE' was not in top 1
+Epoch 21, global step 1826: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.042 >= min_delta = 0.0. New best score: 1.479
+Epoch 22, global step 1909: 'val/ADE' reached 1.47925 (best 1.47925), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_lmu_pretrain.ckpt' as top 1
+Epoch 23, global step 1992: 'val/ADE' was not in top 1
+Epoch 24, global step 2075: 'val/ADE' was not in top 1
+Epoch 25, global step 2158: 'val/ADE' was not in top 1
+Epoch 26, global step 2241: 'val/ADE' was not in top 1
+Epoch 27, global step 2324: 'val/ADE' was not in top 1
+Epoch 28, global step 2407: 'val/ADE' was not in top 1
+Epoch 29, global step 2490: 'val/ADE' was not in top 1
+Epoch 30, global step 2573: 'val/ADE' was not in top 1
