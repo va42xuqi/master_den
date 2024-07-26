@@ -63,3 +63,21 @@ Epoch 29, global step 11340: 'val/ADE' was not in top 1
 Epoch 30, global step 11718: 'val/ADE' was not in top 1
 Metric val/ADE improved by 0.021 >= min_delta = 0.0. New best score: 3.428
 Epoch 31, global step 12096: 'val/ADE' reached 3.42805 (best 3.42805), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_bitnet_pretrain.ckpt' as top 1
+Metric val/ADE improved by 0.176 >= min_delta = 0.0. New best score: 3.252
+Epoch 32, global step 12474: 'val/ADE' reached 3.25231 (best 3.25231), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_bitnet_pretrain.ckpt' as top 1
+Epoch 33, global step 12852: 'val/ADE' was not in top 1
+Epoch 34, global step 13230: 'val/ADE' was not in top 1
+Epoch 35, global step 13608: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.016 >= min_delta = 0.0. New best score: 3.236
+Epoch 36, global step 13986: 'val/ADE' reached 3.23604 (best 3.23604), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_bitnet_pretrain.ckpt' as top 1
+Metric val/ADE improved by 0.118 >= min_delta = 0.0. New best score: 3.118
+Epoch 37, global step 14364: 'val/ADE' reached 3.11763 (best 3.11763), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_bitnet_pretrain.ckpt' as top 1
+Epoch 38, global step 14742: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.165 >= min_delta = 0.0. New best score: 2.953
+Epoch 39, global step 15120: 'val/ADE' reached 2.95300 (best 2.95300), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_bitnet_pretrain.ckpt' as top 1
+Epoch 40, global step 15498: 'val/ADE' was not in top 1
+Epoch 41, global step 15876: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.005 >= min_delta = 0.0. New best score: 2.948
+Epoch 42, global step 16254: 'val/ADE' reached 2.94813 (best 2.94813), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_bitnet_pretrain.ckpt' as top 1
+Metric val/ADE improved by 0.113 >= min_delta = 0.0. New best score: 2.836
+Epoch 43, global step 16632: 'val/ADE' reached 2.83552 (best 2.83552), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_bitnet_pretrain.ckpt' as top 1

@@ -1,0 +1,31 @@
+/data/beegfs/home/gosalcds/miniconda3/envs/paper/lib/python3.11/site-packages/torch/nn/modules/rnn.py:71: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  warnings.warn("dropout option adds dropout after all but last "
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+wandb: Currently logged in as: luffnis (luffnis1). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.5
+wandb: Run data is saved locally in ./wandb/run-20240726_205706-p65hgjhj
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vel_lstm_NBA_train_50_100
+wandb: ⭐️ View project at https://wandb.ai/luffnis1/lightning_logs
+wandb: 🚀 View run at https://wandb.ai/luffnis1/lightning_logs/runs/p65hgjhj
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [2]
+
+  | Name          | Type    | Params
+------------------------------------------
+0 | preprocessing | LMU     | 204 K 
+1 | dropout_layer | Dropout | 0     
+2 | lstm          | LSTM    | 526 K 
+3 | fc_out        | Linear  | 51.4 K
+------------------------------------------
+781 K     Trainable params
+0         Non-trainable params
+781 K     Total params
+3.127     Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.
+Metric val/ADE improved. New best score: 2.222
+Epoch 0, global step 95: 'val/ADE' reached 2.22174 (best 2.22174), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/vel_lstm.ckpt' as top 1
+Metric val/ADE improved by 0.027 >= min_delta = 0.0. New best score: 2.195
+Epoch 1, global step 190: 'val/ADE' reached 2.19486 (best 2.19486), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/vel_lstm.ckpt' as top 1

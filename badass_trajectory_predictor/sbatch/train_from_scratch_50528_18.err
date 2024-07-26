@@ -1,0 +1,94 @@
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+wandb: Currently logged in as: luffnis (luffnis1). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.5
+wandb: Run data is saved locally in ./wandb/run-20240726_200335-h475db6b
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run pos_1l_linear_SOC_train_50_100
+wandb: ⭐️ View project at https://wandb.ai/luffnis1/lightning_logs
+wandb: 🚀 View run at https://wandb.ai/luffnis1/lightning_logs/runs/h475db6b
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name   | Type   | Params
+----------------------------------
+0 | linear | Linear | 500 K 
+----------------------------------
+500 K     Trainable params
+0         Non-trainable params
+500 K     Total params
+2.001     Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.
+Metric val/ADE improved. New best score: 3.208
+Epoch 0, global step 83: 'val/ADE' reached 3.20829 (best 3.20829), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/pos_1l_linear-v1.ckpt' as top 1
+Epoch 1, global step 166: 'val/ADE' was not in top 1
+Epoch 2, global step 249: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.093 >= min_delta = 0.0. New best score: 3.116
+Epoch 3, global step 332: 'val/ADE' reached 3.11562 (best 3.11562), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/pos_1l_linear-v1.ckpt' as top 1
+Metric val/ADE improved by 0.180 >= min_delta = 0.0. New best score: 2.935
+Epoch 4, global step 415: 'val/ADE' reached 2.93514 (best 2.93514), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/pos_1l_linear-v1.ckpt' as top 1
+Epoch 5, global step 498: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.262 >= min_delta = 0.0. New best score: 2.673
+Epoch 6, global step 581: 'val/ADE' reached 2.67265 (best 2.67265), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/pos_1l_linear-v1.ckpt' as top 1
+Epoch 7, global step 664: 'val/ADE' was not in top 1
+Epoch 8, global step 747: 'val/ADE' was not in top 1
+Epoch 9, global step 830: 'val/ADE' was not in top 1
+Epoch 10, global step 913: 'val/ADE' was not in top 1
+Epoch 11, global step 996: 'val/ADE' was not in top 1
+Epoch 12, global step 1079: 'val/ADE' was not in top 1
+Epoch 13, global step 1162: 'val/ADE' was not in top 1
+Epoch 14, global step 1245: 'val/ADE' was not in top 1
+Epoch 15, global step 1328: 'val/ADE' was not in top 1
+Epoch 16, global step 1411: 'val/ADE' was not in top 1
+Epoch 17, global step 1494: 'val/ADE' was not in top 1
+Epoch 18, global step 1577: 'val/ADE' was not in top 1
+Epoch 19, global step 1660: 'val/ADE' was not in top 1
+Epoch 20, global step 1743: 'val/ADE' was not in top 1
+Epoch 21, global step 1826: 'val/ADE' was not in top 1
+Epoch 22, global step 1909: 'val/ADE' was not in top 1
+Epoch 23, global step 1992: 'val/ADE' was not in top 1
+Epoch 24, global step 2075: 'val/ADE' was not in top 1
+Epoch 25, global step 2158: 'val/ADE' was not in top 1
+Monitored metric val/ADE did not improve in the last 20 records. Best score: 2.673. Signaling Trainer to stop.
+Epoch 26, global step 2241: 'val/ADE' was not in top 1
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+SLURM auto-requeueing enabled. Setting signal handlers.
+wandb: - 22.924 MB of 22.924 MB uploadedwandb: \ 22.924 MB of 22.924 MB uploadedwandb: | 22.933 MB of 22.963 MB uploaded (0.007 MB deduped)wandb: / 22.934 MB of 22.963 MB uploaded (0.007 MB deduped)wandb: - 22.963 MB of 22.963 MB uploaded (0.007 MB deduped)wandb: 
+wandb: Run history:
+wandb:   CPU energy consumption (kWh) ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁
+wandb:   GPU energy consumption (kWh) ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁
+wandb:   RAM energy consumption (kWh) ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁
+wandb: Total energy consumption (kWh) ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁
+wandb:                          epoch ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇▇███
+wandb:               train/loss_epoch █▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:                train/loss_step █▂▂▂▂▂▂▂▁▁▂▂▁▁▁▁▂▁▂▂▂▂▁▁▂▁▁▁▂▂▂▁▁▂▁▁▂▁▁▂
+wandb:            trainer/global_step ▁▁▁▂▂▁▂▂▁▃▃▁▁▃▄▁▄▄▁▅▅▅▅▅▅▆▆▆▁▆▇▁▇▇▁▁██▁█
+wandb:                  val/ADE_epoch ▄▄█▃▂▃▁▄▄▂▂▄▃▂▂▂▂▄▃▄▂▃▃▂▃▄▂▂
+wandb:                   val/ADE_step ▃▄▅█▅▃▃▄▂▁▄▇▆▃▄▂▄▂▄▃▂▃▁▁▃▄▃▄▅▃▄▅▃▃▂▃▄▁▂▃
+wandb:                  val/FDE_epoch ▃▄█▄▂▃▁▄▅▂▃▄▃▂▂▂▃▄▃▅▂▂▃▂▃▅▂▂
+wandb:                   val/FDE_step ▃▄▅█▅▃▃▃▂▁▄▇▇▃▅▃▄▂▄▃▂▄▁▃▄▅▄▅▆▄▃▃▃▃▂▄▅▂▂▂
+wandb:               val/NL_ADE_epoch ▄▄█▃▂▃▁▄▄▂▂▄▃▂▁▂▂▄▃▄▂▃▃▂▃▄▂▂
+wandb:                val/NL_ADE_step ▃▅▅█▅▃▃▄▂▁▅▇▆▃▄▂▄▂▄▃▂▄▁▂▃▄▃▄▆▃▄▅▃▃▂▃▄▂▂▂
+wandb: 
+wandb: Run summary:
+wandb:   CPU energy consumption (kWh) 0.0
+wandb:   GPU energy consumption (kWh) 1e-05
+wandb:   RAM energy consumption (kWh) 0.0
+wandb: Total energy consumption (kWh) 2e-05
+wandb:                          epoch 27
+wandb:               train/loss_epoch 4.18107
+wandb:                train/loss_step 4.49295
+wandb:            trainer/global_step 2241
+wandb:                  val/ADE_epoch 2.83282
+wandb:                   val/ADE_step 2.92825
+wandb:                  val/FDE_epoch 5.7698
+wandb:                   val/FDE_step 5.58164
+wandb:               val/NL_ADE_epoch 2.92772
+wandb:                val/NL_ADE_step 2.91425
+wandb: 
+wandb: 🚀 View run pos_1l_linear_SOC_train_50_100 at: https://wandb.ai/luffnis1/lightning_logs/runs/h475db6b
+wandb: ⭐️ View project at: https://wandb.ai/luffnis1/lightning_logs
+wandb: Synced 6 W&B file(s), 0 media file(s), 6 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240726_200335-h475db6b/logs
+wandb: WARNING The new W&B backend becomes opt-out in version 0.18.0; try it out with `wandb.require("core")`! See https://wandb.me/wandb-core for more information.

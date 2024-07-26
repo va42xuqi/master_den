@@ -1,0 +1,32 @@
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+wandb: Currently logged in as: luffnis (luffnis1). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.5
+wandb: Run data is saved locally in ./wandb/run-20240726_204519-y7malknr
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run uni_bitnet_NBA_train_50_100
+wandb: ⭐️ View project at https://wandb.ai/luffnis1/lightning_logs
+wandb: 🚀 View run at https://wandb.ai/luffnis1/lightning_logs/runs/y7malknr
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [3]
+
+  | Name      | Type       | Params
+-----------------------------------------
+0 | linear    | Linear     | 26.9 K
+1 | x_encoder | GPTLike    | 4.8 M 
+2 | y_encoder | GPTLike    | 4.8 M 
+3 | x_cnn     | CNNEncoder | 20.2 K
+4 | y_cnn     | CNNEncoder | 20.2 K
+5 | x_fc_out  | Linear     | 25.7 K
+6 | y_fc_out  | Linear     | 25.7 K
+7 | dropout   | Dropout    | 0     
+-----------------------------------------
+9.7 M     Trainable params
+0         Non-trainable params
+9.7 M     Total params
+38.609    Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.
+Metric val/ADE improved. New best score: 4.238
+Epoch 0, global step 378: 'val/ADE' reached 4.23788 (best 4.23788), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_bitnet.ckpt' as top 1
+Epoch 1, global step 756: 'val/ADE' was not in top 1

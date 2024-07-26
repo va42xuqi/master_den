@@ -1,0 +1,24 @@
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+wandb: Currently logged in as: luffnis (luffnis1). Use `wandb login --relogin` to force relogin
+wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: | Waiting for wandb.init()...wandb: / Waiting for wandb.init()...wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: Tracking run with wandb version 0.17.5
+wandb: Run data is saved locally in ./wandb/run-20240726_205810-roum2ww8
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run pos_lmu_NBA_train_50_100
+wandb: ⭐️ View project at https://wandb.ai/luffnis1/lightning_logs
+wandb: 🚀 View run at https://wandb.ai/luffnis1/lightning_logs/runs/roum2ww8
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [1]
+
+  | Name          | Type   | Params
+-----------------------------------------
+0 | lmu           | LMU    | 152 K 
+1 | preprocessing | LMU    | 93.1 K
+2 | fc_out        | Linear | 51.4 K
+-----------------------------------------
+296 K     Trainable params
+0         Non-trainable params
+296 K     Total params
+1.187     Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.

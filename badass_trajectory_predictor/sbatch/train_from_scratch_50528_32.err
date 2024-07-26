@@ -1,0 +1,33 @@
+/data/beegfs/home/gosalcds/miniconda3/envs/paper/lib/python3.11/site-packages/torch/nn/modules/rnn.py:71: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  warnings.warn("dropout option adds dropout after all but last "
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+wandb: W&B API key is configured. Use `wandb login --relogin` to force relogin
+wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: Tracking run with wandb version 0.17.5
+wandb: Run data is saved locally in ./wandb/run-20240726_205637-jk2u0vcv
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run pos_lstm_NBA_train_50_100
+wandb: ⭐️ View project at https://wandb.ai/luffnis1/lightning_logs
+wandb: 🚀 View run at https://wandb.ai/luffnis1/lightning_logs/runs/jk2u0vcv
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name          | Type    | Params
+------------------------------------------
+0 | preprocessing | LMU     | 204 K 
+1 | dropout_layer | Dropout | 0     
+2 | lstm          | LSTM    | 526 K 
+3 | fc_out        | Linear  | 51.4 K
+------------------------------------------
+781 K     Trainable params
+0         Non-trainable params
+781 K     Total params
+3.127     Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.
+Metric val/ADE improved. New best score: 2.769
+Epoch 0, global step 95: 'val/ADE' reached 2.76862 (best 2.76862), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_lstm.ckpt' as top 1
+Metric val/ADE improved by 0.013 >= min_delta = 0.0. New best score: 2.755
+Epoch 1, global step 190: 'val/ADE' reached 2.75547 (best 2.75547), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_lstm.ckpt' as top 1
+Metric val/ADE improved by 0.101 >= min_delta = 0.0. New best score: 2.654
+Epoch 2, global step 285: 'val/ADE' reached 2.65397 (best 2.65397), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_lstm.ckpt' as top 1
