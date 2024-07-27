@@ -1,0 +1,69 @@
+/data/beegfs/home/gosalcds/miniconda3/envs/paper/lib/python3.11/site-packages/torch/nn/modules/rnn.py:71: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  warnings.warn("dropout option adds dropout after all but last "
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+wandb: Currently logged in as: luffnis (luffnis1). Use `wandb login --relogin` to force relogin
+wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: Tracking run with wandb version 0.17.5
+wandb: Run data is saved locally in ./wandb/run-20240727_052115-9yl316ok
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vel_lstm_NBA_train_50_100
+wandb: ⭐️ View project at https://wandb.ai/luffnis1/lightning_logs
+wandb: 🚀 View run at https://wandb.ai/luffnis1/lightning_logs/runs/9yl316ok
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [3]
+
+  | Name          | Type    | Params
+------------------------------------------
+0 | preprocessing | LMU     | 199 K 
+1 | dropout_layer | Dropout | 0     
+2 | lstm          | LSTM    | 526 K 
+3 | fc_out        | Linear  | 51.4 K
+------------------------------------------
+777 K     Trainable params
+0         Non-trainable params
+777 K     Total params
+3.109     Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.
+wandb: 429 encountered (Filestream rate limit exceeded, retrying in 2.3 seconds.), retrying request
+Metric val/ADE improved. New best score: 2.162
+Epoch 0, global step 95: 'val/ADE' reached 2.16197 (best 2.16197), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/vel_lstm_nba_fine_tune.ckpt' as top 1
+Epoch 1, global step 190: 'val/ADE' was not in top 1
+Epoch 2, global step 285: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.025 >= min_delta = 0.0. New best score: 2.137
+Epoch 3, global step 380: 'val/ADE' reached 2.13673 (best 2.13673), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/vel_lstm_nba_fine_tune.ckpt' as top 1
+Epoch 4, global step 475: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.019 >= min_delta = 0.0. New best score: 2.118
+Epoch 5, global step 570: 'val/ADE' reached 2.11761 (best 2.11761), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/vel_lstm_nba_fine_tune.ckpt' as top 1
+Epoch 6, global step 665: 'val/ADE' was not in top 1
+Epoch 7, global step 760: 'val/ADE' was not in top 1
+Epoch 8, global step 855: 'val/ADE' was not in top 1
+Epoch 9, global step 950: 'val/ADE' was not in top 1
+Epoch 10, global step 1045: 'val/ADE' was not in top 1
+Epoch 11, global step 1140: 'val/ADE' was not in top 1
+Epoch 12, global step 1235: 'val/ADE' was not in top 1
+Epoch 13, global step 1330: 'val/ADE' was not in top 1
+Epoch 14, global step 1425: 'val/ADE' was not in top 1
+Epoch 15, global step 1520: 'val/ADE' was not in top 1
+Epoch 16, global step 1615: 'val/ADE' was not in top 1
+Epoch 17, global step 1710: 'val/ADE' was not in top 1
+Epoch 18, global step 1805: 'val/ADE' was not in top 1
+Epoch 19, global step 1900: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.008 >= min_delta = 0.0. New best score: 2.110
+Epoch 20, global step 1995: 'val/ADE' reached 2.10999 (best 2.10999), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/vel_lstm_nba_fine_tune.ckpt' as top 1
+Epoch 21, global step 2090: 'val/ADE' was not in top 1
+Epoch 22, global step 2185: 'val/ADE' was not in top 1
+Epoch 23, global step 2280: 'val/ADE' was not in top 1
+Epoch 24, global step 2375: 'val/ADE' was not in top 1
+Epoch 25, global step 2470: 'val/ADE' was not in top 1
+Epoch 26, global step 2565: 'val/ADE' was not in top 1
+Epoch 27, global step 2660: 'val/ADE' was not in top 1
+Epoch 28, global step 2755: 'val/ADE' was not in top 1
+Epoch 29, global step 2850: 'val/ADE' was not in top 1
+Epoch 30, global step 2945: 'val/ADE' was not in top 1
+Epoch 31, global step 3040: 'val/ADE' was not in top 1
+Epoch 32, global step 3135: 'val/ADE' was not in top 1
+Epoch 33, global step 3230: 'val/ADE' was not in top 1
+Epoch 34, global step 3325: 'val/ADE' was not in top 1
+Epoch 35, global step 3420: 'val/ADE' was not in top 1
+Epoch 36, global step 3515: 'val/ADE' was not in top 1
