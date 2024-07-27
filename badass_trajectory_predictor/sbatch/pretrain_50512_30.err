@@ -189,3 +189,15 @@ Epoch 126, global step 48006: 'val/ADE' was not in top 1
 Epoch 127, global step 48384: 'val/ADE' was not in top 1
 Epoch 128, global step 48762: 'val/ADE' was not in top 1
 Epoch 129, global step 49140: 'val/ADE' was not in top 1
+Epoch 130, global step 49518: 'val/ADE' was not in top 1
+Epoch 131, global step 49896: 'val/ADE' was not in top 1
+Epoch 132, global step 50274: 'val/ADE' was not in top 1
+Epoch 133, global step 50652: 'val/ADE' was not in top 1
+Epoch 134, global step 51030: 'val/ADE' was not in top 1
+Epoch 135, global step 51408: 'val/ADE' was not in top 1
+Epoch 136, global step 51786: 'val/ADE' was not in top 1
+Epoch 137, global step 52164: 'val/ADE' was not in top 1
+Epoch 138, global step 52542: 'val/ADE' was not in top 1
+Epoch 139, global step 52920: 'val/ADE' was not in top 1
+Epoch 140, global step 53298: 'val/ADE' was not in top 1
+Epoch 141, global step 53676: 'val/ADE' was not in top 1
