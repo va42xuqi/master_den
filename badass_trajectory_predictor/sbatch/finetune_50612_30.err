@@ -76,3 +76,16 @@ Epoch 36, global step 13986: 'val/ADE' reached 2.24030 (best 2.24030), saving mo
 Epoch 37, global step 14364: 'val/ADE' was not in top 1
 Epoch 38, global step 14742: 'val/ADE' was not in top 1
 Epoch 39, global step 15120: 'val/ADE' was not in top 1
+Epoch 40, global step 15498: 'val/ADE' was not in top 1
+Epoch 41, global step 15876: 'val/ADE' was not in top 1
+Epoch 42, global step 16254: 'val/ADE' was not in top 1
+Epoch 43, global step 16632: 'val/ADE' was not in top 1
+Epoch 44, global step 17010: 'val/ADE' was not in top 1
+Epoch 45, global step 17388: 'val/ADE' was not in top 1
+Epoch 46, global step 17766: 'val/ADE' was not in top 1
+Epoch 47, global step 18144: 'val/ADE' was not in top 1
+Epoch 48, global step 18522: 'val/ADE' was not in top 1
+Epoch 49, global step 18900: 'val/ADE' was not in top 1
+Epoch 50, global step 19278: 'val/ADE' was not in top 1
+Epoch 51, global step 19656: 'val/ADE' was not in top 1
+Epoch 52, global step 20034: 'val/ADE' was not in top 1
