@@ -1,0 +1,37 @@
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+wandb: Currently logged in as: luffnis (luffnis1). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.5
+wandb: Run data is saved locally in ./wandb/run-20240731_173347-a2kh9n4v
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run os_bitnet_NBA_train_50_100_pretrain
+wandb: ⭐️ View project at https://wandb.ai/luffnis1/lightning_logs
+wandb: 🚀 View run at https://wandb.ai/luffnis1/lightning_logs/runs/a2kh9n4v
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [3]
+
+  | Name    | Type       | Params
+---------------------------------------
+0 | linear  | Linear     | 26.9 K
+1 | encoder | GPTLike    | 4.8 M 
+2 | cnn     | CNNEncoder | 12.5 K
+3 | fc_out  | Linear     | 51.4 K
+4 | dropout | Dropout    | 0     
+---------------------------------------
+4.9 M     Trainable params
+0         Non-trainable params
+4.9 M     Total params
+19.430    Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.
+Metric val/ADE improved. New best score: 3.111
+Epoch 0, global step 378: 'val/ADE' reached 3.11056 (best 3.11056), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/os_bitnet_pretrain-v1.ckpt' as top 1
+Epoch 1, global step 756: 'val/ADE' was not in top 1
+Epoch 2, global step 1134: 'val/ADE' was not in top 1
+Epoch 3, global step 1512: 'val/ADE' was not in top 1
+Epoch 4, global step 1890: 'val/ADE' was not in top 1
+Epoch 5, global step 2268: 'val/ADE' was not in top 1
+Epoch 6, global step 2646: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.003 >= min_delta = 0.0. New best score: 3.107
+Epoch 7, global step 3024: 'val/ADE' reached 3.10731 (best 3.10731), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/os_bitnet_pretrain-v1.ckpt' as top 1
+Epoch 8, global step 3402: 'val/ADE' was not in top 1

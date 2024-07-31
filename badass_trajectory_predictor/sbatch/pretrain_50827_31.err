@@ -1,0 +1,38 @@
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+wandb: Currently logged in as: luffnis (luffnis1). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.5
+wandb: Run data is saved locally in ./wandb/run-20240731_175624-4vj6yut3
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run uni_trafo_NBA_train_50_100_pretrain
+wandb: ⭐️ View project at https://wandb.ai/luffnis1/lightning_logs
+wandb: 🚀 View run at https://wandb.ai/luffnis1/lightning_logs/runs/4vj6yut3
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [1]
+
+  | Name      | Type       | Params
+-----------------------------------------
+0 | linear    | Linear     | 26.9 K
+1 | x_encoder | GPTLike    | 4.7 M 
+2 | y_encoder | GPTLike    | 4.7 M 
+3 | x_cnn     | CNNEncoder | 6.4 K 
+4 | y_cnn     | CNNEncoder | 6.4 K 
+5 | x_fc_out  | Linear     | 25.7 K
+6 | y_fc_out  | Linear     | 25.7 K
+7 | dropout   | Dropout    | 0     
+-----------------------------------------
+9.6 M     Trainable params
+0         Non-trainable params
+9.6 M     Total params
+38.277    Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.
+Metric val/ADE improved. New best score: 2.263
+Epoch 0, global step 95: 'val/ADE' reached 2.26305 (best 2.26305), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_trafo_pretrain-v1.ckpt' as top 1
+Metric val/ADE improved by 0.197 >= min_delta = 0.0. New best score: 2.066
+Epoch 1, global step 190: 'val/ADE' reached 2.06607 (best 2.06607), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_trafo_pretrain-v1.ckpt' as top 1
+Epoch 2, global step 285: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.051 >= min_delta = 0.0. New best score: 2.015
+Epoch 3, global step 380: 'val/ADE' reached 2.01470 (best 2.01470), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_trafo_pretrain-v1.ckpt' as top 1
+Metric val/ADE improved by 0.072 >= min_delta = 0.0. New best score: 1.942
+Epoch 4, global step 475: 'val/ADE' reached 1.94227 (best 1.94227), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_trafo_pretrain-v1.ckpt' as top 1
