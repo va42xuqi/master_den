@@ -1,0 +1,46 @@
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+wandb: Currently logged in as: luffnis (luffnis1). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.5
+wandb: Run data is saved locally in ./wandb/run-20240731_163520-x717nq2n
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run vel_lmu_SOC_train_50_100_pretrain
+wandb: ⭐️ View project at https://wandb.ai/luffnis1/lightning_logs
+wandb: 🚀 View run at https://wandb.ai/luffnis1/lightning_logs/runs/x717nq2n
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [2]
+
+  | Name          | Type   | Params
+-----------------------------------------
+0 | lmu           | LMU    | 152 K 
+1 | preprocessing | LMU    | 88.5 K
+2 | fc_out        | Linear | 51.4 K
+-----------------------------------------
+292 K     Trainable params
+0         Non-trainable params
+292 K     Total params
+1.168     Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.
+Metric val/ADE improved. New best score: 1.695
+Epoch 0, global step 83: 'val/ADE' reached 1.69474 (best 1.69474), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/vel_lmu_pretrain-v1.ckpt' as top 1
+Metric val/ADE improved by 0.081 >= min_delta = 0.0. New best score: 1.613
+Epoch 1, global step 166: 'val/ADE' reached 1.61345 (best 1.61345), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/vel_lmu_pretrain-v1.ckpt' as top 1
+Metric val/ADE improved by 0.005 >= min_delta = 0.0. New best score: 1.609
+Epoch 2, global step 249: 'val/ADE' reached 1.60855 (best 1.60855), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/vel_lmu_pretrain-v1.ckpt' as top 1
+Metric val/ADE improved by 0.139 >= min_delta = 0.0. New best score: 1.470
+Epoch 3, global step 332: 'val/ADE' reached 1.46981 (best 1.46981), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/vel_lmu_pretrain-v1.ckpt' as top 1
+Epoch 4, global step 415: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.023 >= min_delta = 0.0. New best score: 1.447
+Epoch 5, global step 498: 'val/ADE' reached 1.44723 (best 1.44723), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/vel_lmu_pretrain-v1.ckpt' as top 1
+Epoch 6, global step 581: 'val/ADE' was not in top 1
+Epoch 7, global step 664: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.017 >= min_delta = 0.0. New best score: 1.430
+Epoch 8, global step 747: 'val/ADE' reached 1.43018 (best 1.43018), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/vel_lmu_pretrain-v1.ckpt' as top 1
+Epoch 9, global step 830: 'val/ADE' was not in top 1
+Epoch 10, global step 913: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.039 >= min_delta = 0.0. New best score: 1.391
+Epoch 11, global step 996: 'val/ADE' reached 1.39096 (best 1.39096), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/vel_lmu_pretrain-v1.ckpt' as top 1
+Epoch 12, global step 1079: 'val/ADE' was not in top 1
+Epoch 13, global step 1162: 'val/ADE' was not in top 1
+Epoch 14, global step 1245: 'val/ADE' was not in top 1
