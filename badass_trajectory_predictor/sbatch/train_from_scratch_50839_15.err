@@ -64,3 +64,48 @@ Epoch 29, global step 2490: 'val/ADE' was not in top 1
 Epoch 30, global step 2573: 'val/ADE' was not in top 1
 Epoch 31, global step 2656: 'val/ADE' was not in top 1
 Epoch 32, global step 2739: 'val/ADE' was not in top 1
+Epoch 33, global step 2822: 'val/ADE' was not in top 1
+Epoch 34, global step 2905: 'val/ADE' was not in top 1
+Epoch 35, global step 2988: 'val/ADE' was not in top 1
+Monitored metric val/ADE did not improve in the last 20 records. Best score: 2.966. Signaling Trainer to stop.
+Epoch 36, global step 3071: 'val/ADE' was not in top 1
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [3]
+SLURM auto-requeueing enabled. Setting signal handlers.
+wandb: - 391.204 MB of 391.204 MB uploadedwandb: \ 391.204 MB of 391.235 MB uploadedwandb: | 391.235 MB of 391.235 MB uploadedwandb: 
+wandb: Run history:
+wandb:   CPU energy consumption (kWh) ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁
+wandb:   GPU energy consumption (kWh) ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁
+wandb:   RAM energy consumption (kWh) ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁
+wandb: Total energy consumption (kWh) ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█▁
+wandb:                          epoch ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:               train/loss_epoch █▅▄▄▄▄▃▃▃▃▃▃▃▃▃▃▂▃▂▃▂▂▂▂▂▂▂▁▂▂▁▂▁▁▁▁▁
+wandb:                train/loss_step █▆▆▇▅▃▅▆▆▅▇▅▄▆▄▁▅▄▇▄▃▅▄▅▆▄▂▃▅▆▅▃▂▆▄▄▆▄▃▃
+wandb:            trainer/global_step ▁▁▁▂▂▁▁▁▁▃▃▃▃▁▁▄▄▄▄▅▁▁▅▅▅▆▁▁▁▁▇▇▇▇▇▇███▁
+wandb:                  val/ADE_epoch █▇▇▅▇▂▅▇▃▄▂▇▄▇▂▂▁▄▄▅▅▄▅▅▅▅▂▂▆▄▁▃▃▄▂▃▁▂
+wandb:                   val/ADE_step ▃▂▅█▄▄▁▃▅▆█▂▅▄▅▃▂▂▃▁▄▃▄▂▅▃▅▂▂▅▅▂▃▄▄▂▂▄▃▂
+wandb:                  val/FDE_epoch █▇▆▅▆▂▅▇▄▄▁▇▅█▁▂▁▅▄▆▅▄▆▄▄▅▁▃▇▄▁▃▃▅▂▃▁▂
+wandb:                   val/FDE_step ▃▂▄▇▄▄▁▄▅▆█▂▄▃▅▃▂▂▃▁▄▃▄▂▄▃▅▂▂▄▄▂▃▄▄▂▂▅▃▃
+wandb:               val/NL_ADE_epoch █▇▆▄▆▂▄▆▃▅▃▆▃▆▂▂▁▄▃▅▄▄▄▅▃▄▂▂▅▃▂▂▂▄▂▂▂▂
+wandb:                val/NL_ADE_step ▄▂▆▇▄▃▂▃▅▆█▂▄▃▅▃▂▂▃▁▅▃▄▃▄▂▅▂▃▅▄▂▃▄▃▂▂▄▃▂
+wandb: 
+wandb: Run summary:
+wandb:   CPU energy consumption (kWh) 2e-05
+wandb:   GPU energy consumption (kWh) 0.0001
+wandb:   RAM energy consumption (kWh) 0.0
+wandb: Total energy consumption (kWh) 0.00012
+wandb:                          epoch 37
+wandb:               train/loss_epoch 1.98189
+wandb:                train/loss_step 2.14127
+wandb:            trainer/global_step 3071
+wandb:                  val/ADE_epoch 2.9983
+wandb:                   val/ADE_step 2.9332
+wandb:                  val/FDE_epoch 5.71706
+wandb:                   val/FDE_step 5.71035
+wandb:               val/NL_ADE_epoch 3.11347
+wandb:                val/NL_ADE_step 3.01187
+wandb: 
+wandb: 🚀 View run vel_bitnet_SOC_train_50_100 at: https://wandb.ai/luffnis1/lightning_logs/runs/xlsnztzv
+wandb: ⭐️ View project at: https://wandb.ai/luffnis1/lightning_logs
+wandb: Synced 6 W&B file(s), 0 media file(s), 7 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240731_213829-xlsnztzv/logs
+wandb: WARNING The new W&B backend becomes opt-out in version 0.18.0; try it out with `wandb.require("core")`! See https://wandb.me/wandb-core for more information.

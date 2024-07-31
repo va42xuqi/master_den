@@ -81,3 +81,27 @@ Epoch 38, global step 3237: 'val/ADE' was not in top 1
 Epoch 39, global step 3320: 'val/ADE' was not in top 1
 Epoch 40, global step 3403: 'val/ADE' was not in top 1
 Epoch 41, global step 3486: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.020 >= min_delta = 0.0. New best score: 1.350
+Epoch 42, global step 3569: 'val/ADE' reached 1.34951 (best 1.34951), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_lmu-v1.ckpt' as top 1
+Metric val/ADE improved by 0.012 >= min_delta = 0.0. New best score: 1.337
+Epoch 43, global step 3652: 'val/ADE' reached 1.33745 (best 1.33745), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_lmu-v1.ckpt' as top 1
+Epoch 44, global step 3735: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.021 >= min_delta = 0.0. New best score: 1.316
+Epoch 45, global step 3818: 'val/ADE' reached 1.31607 (best 1.31607), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_lmu-v1.ckpt' as top 1
+Epoch 46, global step 3901: 'val/ADE' was not in top 1
+Epoch 47, global step 3984: 'val/ADE' was not in top 1
+Epoch 48, global step 4067: 'val/ADE' was not in top 1
+Epoch 49, global step 4150: 'val/ADE' was not in top 1
+Epoch 50, global step 4233: 'val/ADE' was not in top 1
+Epoch 51, global step 4316: 'val/ADE' was not in top 1
+Epoch 52, global step 4399: 'val/ADE' was not in top 1
+Epoch 53, global step 4482: 'val/ADE' was not in top 1
+Epoch 54, global step 4565: 'val/ADE' was not in top 1
+Epoch 55, global step 4648: 'val/ADE' was not in top 1
+Epoch 56, global step 4731: 'val/ADE' was not in top 1
+Epoch 57, global step 4814: 'val/ADE' was not in top 1
+Epoch 58, global step 4897: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.043 >= min_delta = 0.0. New best score: 1.273
+Epoch 59, global step 4980: 'val/ADE' reached 1.27318 (best 1.27318), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_lmu-v1.ckpt' as top 1
+Epoch 60, global step 5063: 'val/ADE' was not in top 1
+Epoch 61, global step 5146: 'val/ADE' was not in top 1
