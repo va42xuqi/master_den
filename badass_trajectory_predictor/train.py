@@ -107,12 +107,14 @@ def load(
     )
 
     names_scene = os.path.join(scene.lower(), model_names[i])
+    name = arch + "_" + scene + "_" + mode + "_" + str(hist_len) + "_" + str(pred_len)
     if pretrain:
         names_scene += "_pretrain"
+        name += "_pretrain"
     if fine_tune:
         names_scene += f"_{fine_tune_scene.lower()}_fine_tune"
+        name += f"_{fine_tune_scene.lower()}_fine_tune"
     callbacks = get_callbacks(names_scene)
-    name = arch + "_" + scene + "_" + mode + "_" + str(hist_len) + "_" + str(pred_len)
     wandb = True
 
     def load_checkpoint(model, checkpoint_name):

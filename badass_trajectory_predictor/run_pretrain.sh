@@ -6,7 +6,7 @@
 #SBATCH --mem-per-gpu=30G
 #SBATCH --error=sbatch/pretrain_%A_%a.err
 #SBATCH --output=sbatch/pretrain_%A_%a.out
-#SBATCH --array=0-41  # Array indices for 42 jobs
+#SBATCH --array=0-43  # Array indices for 44 jobs
 
 # Define arrays for architectures and scenes
 ARCHS=("ostf" "oslstm" "oslmu" "one_layer_linear" "two_layer_linear" "os_bitnet" "uni_lstm" "uni_lmu" "uni_bitnet" "uni_trafo" "pos_lstm" "vel_lstm" "pos_lmu" "vel_lmu" "pos_bitnet" "vel_bitnet" "pos_trafo" "vel_trafo" "pos_1l_linear" "vel_1l_linear" "pos_2l_linear" "vel_2l_linear")
