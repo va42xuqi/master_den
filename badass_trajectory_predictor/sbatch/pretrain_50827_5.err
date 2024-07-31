@@ -126,3 +126,32 @@ Epoch 76, global step 25487: 'val/ADE' reached 1.77748 (best 1.77748), saving mo
 Epoch 77, global step 25818: 'val/ADE' was not in top 1
 Epoch 78, global step 26149: 'val/ADE' was not in top 1
 Epoch 79, global step 26480: 'val/ADE' was not in top 1
+Epoch 80, global step 26811: 'val/ADE' was not in top 1
+Epoch 81, global step 27142: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.007 >= min_delta = 0.0. New best score: 1.771
+Epoch 82, global step 27473: 'val/ADE' reached 1.77093 (best 1.77093), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/os_bitnet_pretrain-v1.ckpt' as top 1
+Epoch 83, global step 27804: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.076 >= min_delta = 0.0. New best score: 1.695
+Epoch 84, global step 28135: 'val/ADE' reached 1.69464 (best 1.69464), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/os_bitnet_pretrain-v1.ckpt' as top 1
+Epoch 85, global step 28466: 'val/ADE' was not in top 1
+Epoch 86, global step 28797: 'val/ADE' was not in top 1
+Epoch 87, global step 29128: 'val/ADE' was not in top 1
+Epoch 88, global step 29459: 'val/ADE' was not in top 1
+Epoch 89, global step 29790: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.001 >= min_delta = 0.0. New best score: 1.693
+Epoch 90, global step 30121: 'val/ADE' reached 1.69344 (best 1.69344), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/os_bitnet_pretrain-v1.ckpt' as top 1
+Metric val/ADE improved by 0.045 >= min_delta = 0.0. New best score: 1.649
+Epoch 91, global step 30452: 'val/ADE' reached 1.64856 (best 1.64856), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/os_bitnet_pretrain-v1.ckpt' as top 1
+Epoch 92, global step 30783: 'val/ADE' was not in top 1
+Epoch 93, global step 31114: 'val/ADE' was not in top 1
+Epoch 94, global step 31445: 'val/ADE' was not in top 1
+Epoch 95, global step 31776: 'val/ADE' was not in top 1
+Epoch 96, global step 32107: 'val/ADE' was not in top 1
+Epoch 97, global step 32438: 'val/ADE' was not in top 1
+Epoch 98, global step 32769: 'val/ADE' was not in top 1
+Epoch 99, global step 33100: 'val/ADE' was not in top 1
+Epoch 100, global step 33431: 'val/ADE' was not in top 1
+Epoch 101, global step 33762: 'val/ADE' was not in top 1
+Epoch 102, global step 34093: 'val/ADE' was not in top 1
+Epoch 103, global step 34424: 'val/ADE' was not in top 1
+Epoch 104, global step 34755: 'val/ADE' was not in top 1

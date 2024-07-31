@@ -1,0 +1,215 @@
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+wandb: Currently logged in as: luffnis (luffnis1). Use `wandb login --relogin` to force relogin
+wandb: - Waiting for wandb.init()...wandb: \ Waiting for wandb.init()...wandb: Tracking run with wandb version 0.17.5
+wandb: Run data is saved locally in ./wandb/run-20240731_190931-eldr78n5
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run pos_2l_linear_NBA_train_50_100_pretrain
+wandb: ⭐️ View project at https://wandb.ai/luffnis1/lightning_logs
+wandb: 🚀 View run at https://wandb.ai/luffnis1/lightning_logs/runs/eldr78n5
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [2]
+
+  | Name          | Type    | Params
+------------------------------------------
+0 | linear        | Linear  | 410 K 
+1 | non_linearity | GELU    | 0     
+2 | dropout       | Dropout | 0     
+3 | linear2       | Linear  | 205 K 
+------------------------------------------
+615 K     Trainable params
+0         Non-trainable params
+615 K     Total params
+2.462     Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.
+Metric val/ADE improved. New best score: 2.276
+Epoch 0, global step 95: 'val/ADE' reached 2.27605 (best 2.27605), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_2l_linear_pretrain.ckpt' as top 1
+Metric val/ADE improved by 0.037 >= min_delta = 0.0. New best score: 2.239
+Epoch 1, global step 190: 'val/ADE' reached 2.23898 (best 2.23898), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_2l_linear_pretrain.ckpt' as top 1
+Metric val/ADE improved by 0.003 >= min_delta = 0.0. New best score: 2.236
+Epoch 2, global step 285: 'val/ADE' reached 2.23612 (best 2.23612), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_2l_linear_pretrain.ckpt' as top 1
+Epoch 3, global step 380: 'val/ADE' was not in top 1
+Epoch 4, global step 475: 'val/ADE' was not in top 1
+Epoch 5, global step 570: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.002 >= min_delta = 0.0. New best score: 2.234
+Epoch 6, global step 665: 'val/ADE' reached 2.23376 (best 2.23376), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_2l_linear_pretrain.ckpt' as top 1
+Epoch 7, global step 760: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.024 >= min_delta = 0.0. New best score: 2.210
+Epoch 8, global step 855: 'val/ADE' reached 2.20970 (best 2.20970), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_2l_linear_pretrain.ckpt' as top 1
+Epoch 9, global step 950: 'val/ADE' was not in top 1
+Epoch 10, global step 1045: 'val/ADE' was not in top 1
+Epoch 11, global step 1140: 'val/ADE' was not in top 1
+Epoch 12, global step 1235: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.012 >= min_delta = 0.0. New best score: 2.197
+Epoch 13, global step 1330: 'val/ADE' reached 2.19739 (best 2.19739), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_2l_linear_pretrain.ckpt' as top 1
+Epoch 14, global step 1425: 'val/ADE' was not in top 1
+Epoch 15, global step 1520: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.003 >= min_delta = 0.0. New best score: 2.195
+Epoch 16, global step 1615: 'val/ADE' reached 2.19452 (best 2.19452), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_2l_linear_pretrain.ckpt' as top 1
+Metric val/ADE improved by 0.009 >= min_delta = 0.0. New best score: 2.185
+Epoch 17, global step 1710: 'val/ADE' reached 2.18543 (best 2.18543), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_2l_linear_pretrain.ckpt' as top 1
+Epoch 18, global step 1805: 'val/ADE' was not in top 1
+Epoch 19, global step 1900: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.003 >= min_delta = 0.0. New best score: 2.183
+Epoch 20, global step 1995: 'val/ADE' reached 2.18280 (best 2.18280), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_2l_linear_pretrain.ckpt' as top 1
+Epoch 21, global step 2090: 'val/ADE' was not in top 1
+Epoch 22, global step 2185: 'val/ADE' was not in top 1
+Epoch 23, global step 2280: 'val/ADE' was not in top 1
+Epoch 24, global step 2375: 'val/ADE' was not in top 1
+Epoch 25, global step 2470: 'val/ADE' was not in top 1
+Epoch 26, global step 2565: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.021 >= min_delta = 0.0. New best score: 2.162
+Epoch 27, global step 2660: 'val/ADE' reached 2.16197 (best 2.16197), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_2l_linear_pretrain.ckpt' as top 1
+Epoch 28, global step 2755: 'val/ADE' was not in top 1
+Epoch 29, global step 2850: 'val/ADE' was not in top 1
+Epoch 30, global step 2945: 'val/ADE' was not in top 1
+Epoch 31, global step 3040: 'val/ADE' was not in top 1
+Epoch 32, global step 3135: 'val/ADE' was not in top 1
+Epoch 33, global step 3230: 'val/ADE' was not in top 1
+Epoch 34, global step 3325: 'val/ADE' was not in top 1
+Epoch 35, global step 3420: 'val/ADE' was not in top 1
+Epoch 36, global step 3515: 'val/ADE' was not in top 1
+Epoch 37, global step 3610: 'val/ADE' was not in top 1
+Epoch 38, global step 3705: 'val/ADE' was not in top 1
+Epoch 39, global step 3800: 'val/ADE' was not in top 1
+Epoch 40, global step 3895: 'val/ADE' was not in top 1
+Epoch 41, global step 3990: 'val/ADE' was not in top 1
+Epoch 42, global step 4085: 'val/ADE' was not in top 1
+Epoch 43, global step 4180: 'val/ADE' was not in top 1
+Epoch 44, global step 4275: 'val/ADE' was not in top 1
+Epoch 45, global step 4370: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.013 >= min_delta = 0.0. New best score: 2.149
+Epoch 46, global step 4465: 'val/ADE' reached 2.14865 (best 2.14865), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_2l_linear_pretrain.ckpt' as top 1
+Epoch 47, global step 4560: 'val/ADE' was not in top 1
+Epoch 48, global step 4655: 'val/ADE' was not in top 1
+Epoch 49, global step 4750: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.001 >= min_delta = 0.0. New best score: 2.148
+Epoch 50, global step 4845: 'val/ADE' reached 2.14793 (best 2.14793), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_2l_linear_pretrain.ckpt' as top 1
+Epoch 51, global step 4940: 'val/ADE' was not in top 1
+Epoch 52, global step 5035: 'val/ADE' was not in top 1
+Epoch 53, global step 5130: 'val/ADE' was not in top 1
+Epoch 54, global step 5225: 'val/ADE' was not in top 1
+Epoch 55, global step 5320: 'val/ADE' was not in top 1
+Epoch 56, global step 5415: 'val/ADE' was not in top 1
+Epoch 57, global step 5510: 'val/ADE' was not in top 1
+Epoch 58, global step 5605: 'val/ADE' was not in top 1
+Epoch 59, global step 5700: 'val/ADE' was not in top 1
+Epoch 60, global step 5795: 'val/ADE' was not in top 1
+Epoch 61, global step 5890: 'val/ADE' was not in top 1
+Epoch 62, global step 5985: 'val/ADE' was not in top 1
+Epoch 63, global step 6080: 'val/ADE' was not in top 1
+Epoch 64, global step 6175: 'val/ADE' was not in top 1
+Epoch 65, global step 6270: 'val/ADE' was not in top 1
+Epoch 66, global step 6365: 'val/ADE' was not in top 1
+Epoch 67, global step 6460: 'val/ADE' was not in top 1
+Epoch 68, global step 6555: 'val/ADE' was not in top 1
+Epoch 69, global step 6650: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.009 >= min_delta = 0.0. New best score: 2.139
+Epoch 70, global step 6745: 'val/ADE' reached 2.13913 (best 2.13913), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_2l_linear_pretrain.ckpt' as top 1
+Epoch 71, global step 6840: 'val/ADE' was not in top 1
+Epoch 72, global step 6935: 'val/ADE' was not in top 1
+Epoch 73, global step 7030: 'val/ADE' was not in top 1
+Epoch 74, global step 7125: 'val/ADE' was not in top 1
+Epoch 75, global step 7220: 'val/ADE' was not in top 1
+Epoch 76, global step 7315: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.017 >= min_delta = 0.0. New best score: 2.122
+Epoch 77, global step 7410: 'val/ADE' reached 2.12239 (best 2.12239), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_2l_linear_pretrain.ckpt' as top 1
+Epoch 78, global step 7505: 'val/ADE' was not in top 1
+Epoch 79, global step 7600: 'val/ADE' was not in top 1
+Epoch 80, global step 7695: 'val/ADE' was not in top 1
+Epoch 81, global step 7790: 'val/ADE' was not in top 1
+Epoch 82, global step 7885: 'val/ADE' was not in top 1
+Epoch 83, global step 7980: 'val/ADE' was not in top 1
+Epoch 84, global step 8075: 'val/ADE' was not in top 1
+Epoch 85, global step 8170: 'val/ADE' was not in top 1
+Epoch 86, global step 8265: 'val/ADE' was not in top 1
+Epoch 87, global step 8360: 'val/ADE' was not in top 1
+Epoch 88, global step 8455: 'val/ADE' was not in top 1
+Epoch 89, global step 8550: 'val/ADE' was not in top 1
+Epoch 90, global step 8645: 'val/ADE' was not in top 1
+Epoch 91, global step 8740: 'val/ADE' was not in top 1
+Epoch 92, global step 8835: 'val/ADE' was not in top 1
+Epoch 93, global step 8930: 'val/ADE' was not in top 1
+Epoch 94, global step 9025: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.015 >= min_delta = 0.0. New best score: 2.108
+Epoch 95, global step 9120: 'val/ADE' reached 2.10768 (best 2.10768), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_2l_linear_pretrain.ckpt' as top 1
+Epoch 96, global step 9215: 'val/ADE' was not in top 1
+Epoch 97, global step 9310: 'val/ADE' was not in top 1
+Epoch 98, global step 9405: 'val/ADE' was not in top 1
+Epoch 99, global step 9500: 'val/ADE' was not in top 1
+Epoch 100, global step 9595: 'val/ADE' was not in top 1
+Epoch 101, global step 9690: 'val/ADE' was not in top 1
+Epoch 102, global step 9785: 'val/ADE' was not in top 1
+Epoch 103, global step 9880: 'val/ADE' was not in top 1
+Epoch 104, global step 9975: 'val/ADE' was not in top 1
+Epoch 105, global step 10070: 'val/ADE' was not in top 1
+Epoch 106, global step 10165: 'val/ADE' was not in top 1
+Epoch 107, global step 10260: 'val/ADE' was not in top 1
+Epoch 108, global step 10355: 'val/ADE' was not in top 1
+Epoch 109, global step 10450: 'val/ADE' was not in top 1
+Epoch 110, global step 10545: 'val/ADE' was not in top 1
+Epoch 111, global step 10640: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.006 >= min_delta = 0.0. New best score: 2.102
+Epoch 112, global step 10735: 'val/ADE' reached 2.10189 (best 2.10189), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_2l_linear_pretrain.ckpt' as top 1
+Epoch 113, global step 10830: 'val/ADE' was not in top 1
+Epoch 114, global step 10925: 'val/ADE' was not in top 1
+Epoch 115, global step 11020: 'val/ADE' was not in top 1
+Epoch 116, global step 11115: 'val/ADE' was not in top 1
+Epoch 117, global step 11210: 'val/ADE' was not in top 1
+Epoch 118, global step 11305: 'val/ADE' was not in top 1
+Epoch 119, global step 11400: 'val/ADE' was not in top 1
+Epoch 120, global step 11495: 'val/ADE' was not in top 1
+Epoch 121, global step 11590: 'val/ADE' was not in top 1
+Epoch 122, global step 11685: 'val/ADE' was not in top 1
+Epoch 123, global step 11780: 'val/ADE' was not in top 1
+Epoch 124, global step 11875: 'val/ADE' was not in top 1
+Epoch 125, global step 11970: 'val/ADE' was not in top 1
+Epoch 126, global step 12065: 'val/ADE' was not in top 1
+Epoch 127, global step 12160: 'val/ADE' was not in top 1
+Epoch 128, global step 12255: 'val/ADE' was not in top 1
+Epoch 129, global step 12350: 'val/ADE' was not in top 1
+Epoch 130, global step 12445: 'val/ADE' was not in top 1
+Epoch 131, global step 12540: 'val/ADE' was not in top 1
+Monitored metric val/ADE did not improve in the last 20 records. Best score: 2.102. Signaling Trainer to stop.
+Epoch 132, global step 12635: 'val/ADE' was not in top 1
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [2]
+SLURM auto-requeueing enabled. Setting signal handlers.
+wandb: - 112.843 MB of 112.843 MB uploadedwandb: \ 112.843 MB of 112.843 MB uploadedwandb: | 112.843 MB of 112.881 MB uploadedwandb: / 112.881 MB of 112.881 MB uploadedwandb: 
+wandb: Run history:
+wandb:   CPU energy consumption (kWh) ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█
+wandb:   GPU energy consumption (kWh) ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█
+wandb:   RAM energy consumption (kWh) ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█
+wandb: Total energy consumption (kWh) ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁█
+wandb:                          epoch ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:               train/loss_epoch █▆▅▅▅▅▄▆▄▅▃▃▄▄▃▄▃▃▄▃▅▃▂▅▁▂▂▂▃▂▃▂▄▃▂▂▂▁▂▃
+wandb:                train/loss_step ▇▆▇▇▇▃▆█▄▄▄▄▅▄▄█▃▄▆▇▃▆▄▆▅▃▄▅▆▆▄▃▄▆▅▄▁▃▅▄
+wandb:            trainer/global_step ▁▁▁▁▂▂▂▂▂▃▃▁▁▁▄▄▄▄▄▄▁▁▁▅▅▆▆▆▆▆▁▁▁▇▇▇███▁
+wandb:                  val/ADE_epoch ▇▇█▇▅▄▅▄▃▇▅▇▃▆▆▆▄▆▄▄▃▃▂▂▂▅▄▅▁▃▆▅▃▁▄▃▆▂▆▃
+wandb:                   val/ADE_step ▂▇▇▄▆▃▄▆▅▆▆▆▂▂▆▄▆▁▄▆▃▆▅▆▃▄▆▅▆▂█▃▄▆▃▆▁▄▄▆
+wandb:                  val/FDE_epoch ▅▇█▄▄▃▅▆▄▅▆▅▄▆▅▅▄▅▅▄▂▃▂▁▃▄▅▅▁▂▆▄▃▃▃▃▆▃▄▃
+wandb:                   val/FDE_step ▁▆█▄▇▃▄▇▆▆▇▆▂▃▆▄▇▁▄▆▄▆▇▇▄▄▇▆▇▃█▃▅█▃▆▂▅▅▅
+wandb:               val/NL_ADE_epoch ▇▇▆▅▄▇▆▄▅▄▅█▃▅▅▇▆▇▂▅▅▃▁▁▃▇▆▄▁▃▅█▄▃▆▅▄▅▆▂
+wandb:                val/NL_ADE_step ▁▃▇▄▅▄▁█▃▆▅▃▂▃▇▅▃▂▄▅▃▅▃▅▂▅▄▄▄▄▅▄▁▄▄▄▂▁▄▃
+wandb: 
+wandb: Run summary:
+wandb:   CPU energy consumption (kWh) 1e-05
+wandb:   GPU energy consumption (kWh) 3e-05
+wandb:   RAM energy consumption (kWh) 0.0
+wandb: Total energy consumption (kWh) 3e-05
+wandb:                          epoch 133
+wandb:               train/loss_epoch 1.96939
+wandb:                train/loss_step 1.94257
+wandb:            trainer/global_step 12635
+wandb:                  val/ADE_epoch 2.16277
+wandb:                   val/ADE_step 2.29826
+wandb:                  val/FDE_epoch 4.61357
+wandb:                   val/FDE_step 5.01782
+wandb:               val/NL_ADE_epoch 2.50214
+wandb:                val/NL_ADE_step 2.64083
+wandb: 
+wandb: 🚀 View run pos_2l_linear_NBA_train_50_100_pretrain at: https://wandb.ai/luffnis1/lightning_logs/runs/eldr78n5
+wandb: ⭐️ View project at: https://wandb.ai/luffnis1/lightning_logs
+wandb: Synced 6 W&B file(s), 0 media file(s), 16 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20240731_190931-eldr78n5/logs
+wandb: WARNING The new W&B backend becomes opt-out in version 0.18.0; try it out with `wandb.require("core")`! See https://wandb.me/wandb-core for more information.
