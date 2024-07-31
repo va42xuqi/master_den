@@ -1,0 +1,61 @@
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+wandb: Currently logged in as: luffnis (luffnis1). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.5
+wandb: Run data is saved locally in ./wandb/run-20240731_235155-t77l7i69
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run pos_trafo_NBA_train_50_100
+wandb: ⭐️ View project at https://wandb.ai/luffnis1/lightning_logs
+wandb: 🚀 View run at https://wandb.ai/luffnis1/lightning_logs/runs/t77l7i69
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [3]
+
+  | Name    | Type       | Params
+---------------------------------------
+0 | linear  | Linear     | 26.9 K
+1 | encoder | GPTLike    | 4.7 M 
+2 | cnn     | CNNEncoder | 20.2 K
+3 | fc_out  | Linear     | 51.4 K
+4 | dropout | Dropout    | 0     
+---------------------------------------
+4.8 M     Trainable params
+0         Non-trainable params
+4.8 M     Total params
+19.350    Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.
+Metric val/ADE improved. New best score: 2.833
+Epoch 0, global step 95: 'val/ADE' reached 2.83286 (best 2.83286), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_trafo-v1.ckpt' as top 1
+Metric val/ADE improved by 0.331 >= min_delta = 0.0. New best score: 2.502
+Epoch 1, global step 190: 'val/ADE' reached 2.50155 (best 2.50155), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_trafo-v1.ckpt' as top 1
+Metric val/ADE improved by 0.110 >= min_delta = 0.0. New best score: 2.392
+Epoch 2, global step 285: 'val/ADE' reached 2.39173 (best 2.39173), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_trafo-v1.ckpt' as top 1
+Metric val/ADE improved by 0.003 >= min_delta = 0.0. New best score: 2.389
+Epoch 3, global step 380: 'val/ADE' reached 2.38851 (best 2.38851), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_trafo-v1.ckpt' as top 1
+Metric val/ADE improved by 0.136 >= min_delta = 0.0. New best score: 2.253
+Epoch 4, global step 475: 'val/ADE' reached 2.25264 (best 2.25264), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_trafo-v1.ckpt' as top 1
+Epoch 5, global step 570: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.007 >= min_delta = 0.0. New best score: 2.246
+Epoch 6, global step 665: 'val/ADE' reached 2.24554 (best 2.24554), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_trafo-v1.ckpt' as top 1
+Metric val/ADE improved by 0.004 >= min_delta = 0.0. New best score: 2.242
+Epoch 7, global step 760: 'val/ADE' reached 2.24165 (best 2.24165), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_trafo-v1.ckpt' as top 1
+Epoch 8, global step 855: 'val/ADE' was not in top 1
+Epoch 9, global step 950: 'val/ADE' was not in top 1
+Epoch 10, global step 1045: 'val/ADE' was not in top 1
+Epoch 11, global step 1140: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.013 >= min_delta = 0.0. New best score: 2.228
+Epoch 12, global step 1235: 'val/ADE' reached 2.22816 (best 2.22816), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_trafo-v1.ckpt' as top 1
+Epoch 13, global step 1330: 'val/ADE' was not in top 1
+Epoch 14, global step 1425: 'val/ADE' was not in top 1
+Epoch 15, global step 1520: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.038 >= min_delta = 0.0. New best score: 2.190
+Epoch 16, global step 1615: 'val/ADE' reached 2.19030 (best 2.19030), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_trafo-v1.ckpt' as top 1
+Metric val/ADE improved by 0.002 >= min_delta = 0.0. New best score: 2.188
+Epoch 17, global step 1710: 'val/ADE' reached 2.18807 (best 2.18807), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_trafo-v1.ckpt' as top 1
+Epoch 18, global step 1805: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.026 >= min_delta = 0.0. New best score: 2.162
+Epoch 19, global step 1900: 'val/ADE' reached 2.16181 (best 2.16181), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_trafo-v1.ckpt' as top 1
+Epoch 20, global step 1995: 'val/ADE' was not in top 1
+Epoch 21, global step 2090: 'val/ADE' was not in top 1
+Epoch 22, global step 2185: 'val/ADE' was not in top 1
+Epoch 23, global step 2280: 'val/ADE' was not in top 1

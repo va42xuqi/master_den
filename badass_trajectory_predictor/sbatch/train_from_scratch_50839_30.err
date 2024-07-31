@@ -30,3 +30,18 @@ SLURM auto-requeueing enabled. Setting signal handlers.
 Metric val/ADE improved. New best score: 3.777
 Epoch 0, global step 378: 'val/ADE' reached 3.77658 (best 3.77658), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_bitnet-v1.ckpt' as top 1
 Epoch 1, global step 756: 'val/ADE' was not in top 1
+Epoch 2, global step 1134: 'val/ADE' was not in top 1
+Epoch 3, global step 1512: 'val/ADE' was not in top 1
+Epoch 4, global step 1890: 'val/ADE' was not in top 1
+Epoch 5, global step 2268: 'val/ADE' was not in top 1
+Epoch 6, global step 2646: 'val/ADE' was not in top 1
+Epoch 7, global step 3024: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.006 >= min_delta = 0.0. New best score: 3.771
+Epoch 8, global step 3402: 'val/ADE' reached 3.77060 (best 3.77060), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_bitnet-v1.ckpt' as top 1
+Epoch 9, global step 3780: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.086 >= min_delta = 0.0. New best score: 3.685
+Epoch 10, global step 4158: 'val/ADE' reached 3.68473 (best 3.68473), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_bitnet-v1.ckpt' as top 1
+Metric val/ADE improved by 0.070 >= min_delta = 0.0. New best score: 3.615
+Epoch 11, global step 4536: 'val/ADE' reached 3.61462 (best 3.61462), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_bitnet-v1.ckpt' as top 1
+Metric val/ADE improved by 0.172 >= min_delta = 0.0. New best score: 3.442
+Epoch 12, global step 4914: 'val/ADE' reached 3.44219 (best 3.44219), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_bitnet-v1.ckpt' as top 1
