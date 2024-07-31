@@ -1,0 +1,37 @@
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+wandb: Currently logged in as: luffnis (luffnis1). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.5
+wandb: Run data is saved locally in ./wandb/run-20240731_154437-mnrt4wly
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run os_bitnet_SOC_train_50_100_pretrain
+wandb: ⭐️ View project at https://wandb.ai/luffnis1/lightning_logs
+wandb: 🚀 View run at https://wandb.ai/luffnis1/lightning_logs/runs/mnrt4wly
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [2]
+
+  | Name    | Type       | Params
+---------------------------------------
+0 | linear  | Linear     | 26.9 K
+1 | encoder | GPTLike    | 4.8 M 
+2 | cnn     | CNNEncoder | 12.5 K
+3 | fc_out  | Linear     | 51.4 K
+4 | dropout | Dropout    | 0     
+---------------------------------------
+4.9 M     Trainable params
+0         Non-trainable params
+4.9 M     Total params
+19.430    Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.
+wandb: 429 encountered (Filestream rate limit exceeded, retrying in 2.1 seconds.), retrying request
+Metric val/ADE improved. New best score: 3.548
+Epoch 0, global step 331: 'val/ADE' reached 3.54760 (best 3.54760), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/os_bitnet_pretrain-v1.ckpt' as top 1
+Metric val/ADE improved by 0.195 >= min_delta = 0.0. New best score: 3.352
+Epoch 1, global step 662: 'val/ADE' reached 3.35212 (best 3.35212), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/os_bitnet_pretrain-v1.ckpt' as top 1
+Epoch 2, global step 993: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.199 >= min_delta = 0.0. New best score: 3.153
+Epoch 3, global step 1324: 'val/ADE' reached 3.15269 (best 3.15269), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/os_bitnet_pretrain-v1.ckpt' as top 1
+Metric val/ADE improved by 0.034 >= min_delta = 0.0. New best score: 3.119
+Epoch 4, global step 1655: 'val/ADE' reached 3.11874 (best 3.11874), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/os_bitnet_pretrain-v1.ckpt' as top 1
+Epoch 5, global step 1986: 'val/ADE' was not in top 1

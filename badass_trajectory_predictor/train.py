@@ -201,8 +201,8 @@ if __name__ == "__main__":
     arg.add_argument("--scene", type=str, default="SOC")
     arg.add_argument("--pred_len", type=int, default=100)
     arg.add_argument("--hist_len", type=int, default=50)
-    arg.add_argument("--pretrain", action='store_true')
-    arg.add_argument("--fine_tune", action='store_true')
+    arg.add_argument("--pretrain", action="store_true")
+    arg.add_argument("--fine_tune", action="store_true")
     arg.add_argument("--fine_tune_scene", type=str, default="NBA")
     assert arg.parse_args().mode in ["train", "animate", "benchmark"]
     assert arg.parse_args().scene in ["NBA", "ETH", "SOC", "CAR"]
