@@ -1,0 +1,38 @@
+/data/beegfs/home/gosalcds/miniconda3/envs/paper/lib/python3.11/site-packages/torch/nn/modules/rnn.py:71: UserWarning: dropout option adds dropout after all but last recurrent layer, so non-zero dropout expects num_layers greater than 1, but got dropout=0.2 and num_layers=1
+  warnings.warn("dropout option adds dropout after all but last "
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+wandb: Currently logged in as: luffnis (luffnis1). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.5
+wandb: Run data is saved locally in ./wandb/run-20240801_005005-eycun1vl
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run pos_lstm_NBA_train_50_100_nba_fine_tune
+wandb: ⭐️ View project at https://wandb.ai/luffnis1/lightning_logs
+wandb: 🚀 View run at https://wandb.ai/luffnis1/lightning_logs/runs/eycun1vl
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [3]
+
+  | Name          | Type    | Params
+------------------------------------------
+0 | preprocessing | LMU     | 199 K 
+1 | dropout_layer | Dropout | 0     
+2 | lstm          | LSTM    | 526 K 
+3 | fc_out        | Linear  | 51.4 K
+------------------------------------------
+777 K     Trainable params
+0         Non-trainable params
+777 K     Total params
+3.109     Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.
+Metric val/ADE improved. New best score: 2.035
+Epoch 0, global step 95: 'val/ADE' reached 2.03491 (best 2.03491), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/pos_lstm_nba_fine_tune-v1.ckpt' as top 1
+Epoch 1, global step 190: 'val/ADE' was not in top 1
+Epoch 2, global step 285: 'val/ADE' was not in top 1
+Epoch 3, global step 380: 'val/ADE' was not in top 1
+Epoch 4, global step 475: 'val/ADE' was not in top 1
+Epoch 5, global step 570: 'val/ADE' was not in top 1
+Epoch 6, global step 665: 'val/ADE' was not in top 1
+Epoch 7, global step 760: 'val/ADE' was not in top 1
+Epoch 8, global step 855: 'val/ADE' was not in top 1
+Epoch 9, global step 950: 'val/ADE' was not in top 1
