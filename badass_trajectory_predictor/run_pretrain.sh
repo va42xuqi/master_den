@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Submit the pretraining job
-PRETRAIN_JOB_ID=$(sbatch --parsable run_pretrain.sh)
-if [ -z "$PRETRAIN_JOB_ID" ]; then
-    echo "Failed to submit pretrain job"
-    exit 1
-fi
-echo "Submitted pretrain job with ID $PRETRAIN_JOB_ID"
+#SBATCH --job-name=pretrain
+#SBATCH --partition=gpu
+#SBATCH --gres=gpu:tesla:1
+#SBATCH --mem-per-gpu=30G
+#SBATCH --error=sbatch/pretrain_%A_%a.err
+#SBATCH --output=sbatch/pretrain_%A_%a.out
+#SBATCH --array=0-43  # Array indices for 44 jobs
 
 # Submit the training job, dependent on the pretraining job completing
 TRAIN_JOB_ID=$(sbatch --parsable --dependency=afterok:$PRETRAIN_JOB_ID run_train.sh)
