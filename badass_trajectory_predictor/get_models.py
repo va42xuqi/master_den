@@ -550,7 +550,7 @@ def load_pos_tl_linear(
     pretrain=False,
     fine_tune=False,
 ) -> pl.LightningModule:
-    return vel_tl_Linear(
+    return pos_tl_Linear(
         hidden_size=1024,
         history_len=hist_len,
         prediction_len=pred_len,

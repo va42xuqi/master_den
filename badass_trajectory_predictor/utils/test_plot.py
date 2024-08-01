@@ -4,9 +4,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import torch
 
-from badass_trajectory_predictor.models import Model
-
-
 def plot_error_angular_error(distances, angles, scene, model_name):
     plt.figure(figsize=(10, 10))
     plt.plot(angles, distances, "o")
@@ -45,7 +42,7 @@ def plot(
 
 
 def visualize_predictions(
-    model: Model,
+    model,
     model_name,
     test_dataloader,
     num_samples=None,

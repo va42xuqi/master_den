@@ -23,6 +23,7 @@ def load(
     pretrain: bool = False,
     fine_tune: bool = False,
     fine_tune_scene: str = "SOC",
+    logger: str = "wandb",
 ):
     model_names = [
         "ostf",
@@ -107,13 +108,14 @@ def load(
     )
 
     names_scene = os.path.join(scene.lower(), model_names[i])
+    name = arch + "_" + scene + "_" + mode + "_" + str(hist_len) + "_" + str(pred_len)
     if pretrain:
         names_scene += "_pretrain"
+        name += "_pretrain"
     if fine_tune:
         names_scene += f"_{fine_tune_scene.lower()}_fine_tune"
+        name += f"_{fine_tune_scene.lower()}_fine_tune"
     callbacks = get_callbacks(names_scene)
-    name = arch + "_" + scene + "_" + mode + "_" + str(hist_len) + "_" + str(pred_len)
-    wandb = True
 
     def load_checkpoint(model, checkpoint_name):
         checkpoint = torch.load(
@@ -137,10 +139,12 @@ def load(
     if checkpoint_name:
         model = load_checkpoint(model, checkpoint_name)
 
-    if not wandb:
+    if logger == "tensorboard":
         logger = TensorBoardLogger("log", name=names_scene)
-    else:
+    elif logger == "wandb":
         logger = WandbLogger(log_model="all", name=name)
+    else: # not implemented or invalid logger
+        logger = None
 
     trainer = pl.Trainer(
         max_epochs=-1,
@@ -194,14 +198,16 @@ def load(
 
 if __name__ == "__main__":
     arg = argparse.ArgumentParser()
-    arg.add_argument("--arch", type=str, default="one_layer_linear")
+    arg.add_argument("--arch", type=str, default="ostf")
     arg.add_argument("--mode", type=str, default="train")
     arg.add_argument("--scene", type=str, default="SOC")
     arg.add_argument("--pred_len", type=int, default=100)
     arg.add_argument("--hist_len", type=int, default=50)
-    arg.add_argument("--pretrain", action='store_true')
-    arg.add_argument("--fine_tune", action='store_true')
+    arg.add_argument("--pretrain", action="store_true")
+    arg.add_argument("--fine_tune", action="store_true")
     arg.add_argument("--fine_tune_scene", type=str, default="NBA")
+    arg.add_argument("--seed", type=int, default=42)
+    arg.add_argument("--logger", type=str, default="wandb")
     assert arg.parse_args().mode in ["train", "animate", "benchmark"]
     assert arg.parse_args().scene in ["NBA", "ETH", "SOC", "CAR"]
     assert (
@@ -217,6 +223,7 @@ if __name__ == "__main__":
         args.pretrain,
         args.fine_tune,
         args.fine_tune_scene,
+        args.logger,
     )
 
     # print parameters

@@ -10,4 +10,6 @@ wandb
 lightning_logs
 data
 data.tar.gz
-checkpoints
+checkpoints*
+*.out
+*.err

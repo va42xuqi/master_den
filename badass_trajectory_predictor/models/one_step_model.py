@@ -144,6 +144,10 @@ class OneStepModel(pl.LightningModule):
         self.pretrain = (pretrain,)
         self.fine_tune = fine_tune
 
+        self.best_ADE = 1000
+        self.best_NL_ADE = 1000
+        self.best_FDE = 1000
+
     def forward(self, src, statics):
         pass
 
@@ -301,6 +305,18 @@ class OneStepModel(pl.LightningModule):
         self.log("val/FDE", FDE.mean(), on_step=True, on_epoch=True)
         self.log("val/ADE", ADE.mean(), on_step=True, on_epoch=True)
         self.log("val/NL_ADE", NL_ADE.mean(), on_step=True, on_epoch=True)
+
+        if FDE.mean() < self.best_FDE:
+            self.best_FDE = FDE.mean()
+            self.log("val/best_FDE", FDE.mean(), on_step=True, on_epoch=True)
+        
+        if ADE.mean() < self.best_ADE:
+            self.best_ADE = ADE.mean()
+            self.log("val/best_ADE", ADE.mean(), on_step=True, on_epoch=True)
+
+        if NL_ADE.mean() < self.best_NL_ADE:
+            self.best_NL_ADE = NL_ADE.mean()
+            self.log("val/best_NL_ADE", NL_ADE.mean(), on_step=True, on_epoch=True)
 
         return FDE
 
