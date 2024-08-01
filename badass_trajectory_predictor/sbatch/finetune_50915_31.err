@@ -1,0 +1,33 @@
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+wandb: Currently logged in as: luffnis (luffnis1). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.5
+wandb: Run data is saved locally in ./wandb/run-20240801_025757-fjyqd7s2
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run uni_trafo_SOC_train_50_100_nba_fine_tune
+wandb: ⭐️ View project at https://wandb.ai/luffnis1/lightning_logs
+wandb: 🚀 View run at https://wandb.ai/luffnis1/lightning_logs/runs/fjyqd7s2
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [2]
+
+  | Name      | Type       | Params
+-----------------------------------------
+0 | linear    | Linear     | 26.9 K
+1 | x_encoder | GPTLike    | 4.7 M 
+2 | y_encoder | GPTLike    | 4.7 M 
+3 | x_cnn     | CNNEncoder | 6.4 K 
+4 | y_cnn     | CNNEncoder | 6.4 K 
+5 | x_fc_out  | Linear     | 25.7 K
+6 | y_fc_out  | Linear     | 25.7 K
+7 | dropout   | Dropout    | 0     
+-----------------------------------------
+9.6 M     Trainable params
+0         Non-trainable params
+9.6 M     Total params
+38.277    Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.
+Metric val/ADE improved. New best score: 2.087
+Epoch 0, global step 95: 'val/ADE' reached 2.08650 (best 2.08650), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_trafo_nba_fine_tune-v1.ckpt' as top 1
+Metric val/ADE improved by 0.141 >= min_delta = 0.0. New best score: 1.946
+Epoch 1, global step 190: 'val/ADE' reached 1.94562 (best 1.94562), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_trafo_nba_fine_tune-v1.ckpt' as top 1

@@ -1,0 +1,58 @@
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+wandb: Currently logged in as: luffnis (luffnis1). Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.5
+wandb: Run data is saved locally in ./wandb/run-20240801_021130-fnkkqmmh
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run oslmu_SOC_train_50_100_nba_fine_tune
+wandb: ⭐️ View project at https://wandb.ai/luffnis1/lightning_logs
+wandb: 🚀 View run at https://wandb.ai/luffnis1/lightning_logs/runs/fnkkqmmh
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [1]
+
+  | Name          | Type   | Params
+-----------------------------------------
+0 | lmu           | LMU    | 152 K 
+1 | preprocessing | LMU    | 90.5 K
+2 | fc_out        | Linear | 51.4 K
+-----------------------------------------
+294 K     Trainable params
+0         Non-trainable params
+294 K     Total params
+1.176     Total estimated model params size (MB)
+SLURM auto-requeueing enabled. Setting signal handlers.
+Metric val/ADE improved. New best score: 1.973
+Epoch 0, global step 95: 'val/ADE' reached 1.97260 (best 1.97260), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/oslmu_nba_fine_tune-v1.ckpt' as top 1
+Epoch 1, global step 190: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.036 >= min_delta = 0.0. New best score: 1.937
+Epoch 2, global step 285: 'val/ADE' reached 1.93670 (best 1.93670), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/oslmu_nba_fine_tune-v1.ckpt' as top 1
+Epoch 3, global step 380: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.001 >= min_delta = 0.0. New best score: 1.936
+Epoch 4, global step 475: 'val/ADE' reached 1.93586 (best 1.93586), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/oslmu_nba_fine_tune-v1.ckpt' as top 1
+Metric val/ADE improved by 0.006 >= min_delta = 0.0. New best score: 1.930
+Epoch 5, global step 570: 'val/ADE' reached 1.92957 (best 1.92957), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/oslmu_nba_fine_tune-v1.ckpt' as top 1
+Metric val/ADE improved by 0.014 >= min_delta = 0.0. New best score: 1.916
+Epoch 6, global step 665: 'val/ADE' reached 1.91568 (best 1.91568), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/oslmu_nba_fine_tune-v1.ckpt' as top 1
+Epoch 7, global step 760: 'val/ADE' was not in top 1
+Epoch 8, global step 855: 'val/ADE' was not in top 1
+Epoch 9, global step 950: 'val/ADE' was not in top 1
+Epoch 10, global step 1045: 'val/ADE' was not in top 1
+Epoch 11, global step 1140: 'val/ADE' was not in top 1
+Epoch 12, global step 1235: 'val/ADE' was not in top 1
+Epoch 13, global step 1330: 'val/ADE' was not in top 1
+Epoch 14, global step 1425: 'val/ADE' was not in top 1
+Epoch 15, global step 1520: 'val/ADE' was not in top 1
+Epoch 16, global step 1615: 'val/ADE' was not in top 1
+Epoch 17, global step 1710: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.032 >= min_delta = 0.0. New best score: 1.884
+Epoch 18, global step 1805: 'val/ADE' reached 1.88389 (best 1.88389), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/oslmu_nba_fine_tune-v1.ckpt' as top 1
+Epoch 19, global step 1900: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.023 >= min_delta = 0.0. New best score: 1.860
+Epoch 20, global step 1995: 'val/ADE' reached 1.86043 (best 1.86043), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/oslmu_nba_fine_tune-v1.ckpt' as top 1
+Epoch 21, global step 2090: 'val/ADE' was not in top 1
+Epoch 22, global step 2185: 'val/ADE' was not in top 1
+Epoch 23, global step 2280: 'val/ADE' was not in top 1
+Epoch 24, global step 2375: 'val/ADE' was not in top 1
+Epoch 25, global step 2470: 'val/ADE' was not in top 1
+Epoch 26, global step 2565: 'val/ADE' was not in top 1
