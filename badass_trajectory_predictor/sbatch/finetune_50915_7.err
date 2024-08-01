@@ -34,3 +34,25 @@ Epoch 3, global step 380: 'val/ADE' was not in top 1
 Epoch 4, global step 475: 'val/ADE' was not in top 1
 Epoch 5, global step 570: 'val/ADE' was not in top 1
 Epoch 6, global step 665: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.016 >= min_delta = 0.0. New best score: 1.926
+Epoch 7, global step 760: 'val/ADE' reached 1.92579 (best 1.92579), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_lmu_nba_fine_tune-v1.ckpt' as top 1
+Epoch 8, global step 855: 'val/ADE' was not in top 1
+Epoch 9, global step 950: 'val/ADE' was not in top 1
+Epoch 10, global step 1045: 'val/ADE' was not in top 1
+Epoch 11, global step 1140: 'val/ADE' was not in top 1
+Epoch 12, global step 1235: 'val/ADE' was not in top 1
+Epoch 13, global step 1330: 'val/ADE' was not in top 1
+Epoch 14, global step 1425: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.011 >= min_delta = 0.0. New best score: 1.915
+Epoch 15, global step 1520: 'val/ADE' reached 1.91515 (best 1.91515), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_lmu_nba_fine_tune-v1.ckpt' as top 1
+Epoch 16, global step 1615: 'val/ADE' was not in top 1
+Epoch 17, global step 1710: 'val/ADE' was not in top 1
+Epoch 18, global step 1805: 'val/ADE' was not in top 1
+Epoch 19, global step 1900: 'val/ADE' was not in top 1
+Epoch 20, global step 1995: 'val/ADE' was not in top 1
+Epoch 21, global step 2090: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.003 >= min_delta = 0.0. New best score: 1.912
+Epoch 22, global step 2185: 'val/ADE' reached 1.91169 (best 1.91169), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_lmu_nba_fine_tune-v1.ckpt' as top 1
+Epoch 23, global step 2280: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.023 >= min_delta = 0.0. New best score: 1.889
+Epoch 24, global step 2375: 'val/ADE' reached 1.88869 (best 1.88869), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_lmu_nba_fine_tune-v1.ckpt' as top 1

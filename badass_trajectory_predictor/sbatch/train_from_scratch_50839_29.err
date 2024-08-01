@@ -68,3 +68,22 @@ Epoch 32, global step 3135: 'val/ADE' was not in top 1
 Epoch 33, global step 3230: 'val/ADE' was not in top 1
 Epoch 34, global step 3325: 'val/ADE' was not in top 1
 Epoch 35, global step 3420: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.006 >= min_delta = 0.0. New best score: 1.842
+Epoch 36, global step 3515: 'val/ADE' reached 1.84163 (best 1.84163), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_lmu-v1.ckpt' as top 1
+Epoch 37, global step 3610: 'val/ADE' was not in top 1
+Epoch 38, global step 3705: 'val/ADE' was not in top 1
+Epoch 39, global step 3800: 'val/ADE' was not in top 1
+Epoch 40, global step 3895: 'val/ADE' was not in top 1
+Epoch 41, global step 3990: 'val/ADE' was not in top 1
+Epoch 42, global step 4085: 'val/ADE' was not in top 1
+Epoch 43, global step 4180: 'val/ADE' was not in top 1
+Epoch 44, global step 4275: 'val/ADE' was not in top 1
+Epoch 45, global step 4370: 'val/ADE' was not in top 1
+Epoch 46, global step 4465: 'val/ADE' was not in top 1
+Epoch 47, global step 4560: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.012 >= min_delta = 0.0. New best score: 1.830
+Epoch 48, global step 4655: 'val/ADE' reached 1.83007 (best 1.83007), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/uni_lmu-v1.ckpt' as top 1
+Epoch 49, global step 4750: 'val/ADE' was not in top 1
+Epoch 50, global step 4845: 'val/ADE' was not in top 1
+Epoch 51, global step 4940: 'val/ADE' was not in top 1
+Epoch 52, global step 5035: 'val/ADE' was not in top 1

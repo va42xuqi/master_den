@@ -38,3 +38,30 @@ Epoch 7, global step 3024: 'val/ADE' was not in top 1
 Epoch 8, global step 3402: 'val/ADE' was not in top 1
 Epoch 9, global step 3780: 'val/ADE' was not in top 1
 Epoch 10, global step 4158: 'val/ADE' was not in top 1
+Epoch 11, global step 4536: 'val/ADE' was not in top 1
+Epoch 12, global step 4914: 'val/ADE' was not in top 1
+Epoch 13, global step 5292: 'val/ADE' was not in top 1
+Epoch 14, global step 5670: 'val/ADE' was not in top 1
+Epoch 15, global step 6048: 'val/ADE' was not in top 1
+Epoch 16, global step 6426: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.012 >= min_delta = 0.0. New best score: 3.105
+Epoch 17, global step 6804: 'val/ADE' reached 3.10470 (best 3.10470), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/os_bitnet_nba_fine_tune-v1.ckpt' as top 1
+Metric val/ADE improved by 0.056 >= min_delta = 0.0. New best score: 3.048
+Epoch 18, global step 7182: 'val/ADE' reached 3.04836 (best 3.04836), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/os_bitnet_nba_fine_tune-v1.ckpt' as top 1
+Epoch 19, global step 7560: 'val/ADE' was not in top 1
+Epoch 20, global step 7938: 'val/ADE' was not in top 1
+Epoch 21, global step 8316: 'val/ADE' was not in top 1
+Epoch 22, global step 8694: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.014 >= min_delta = 0.0. New best score: 3.034
+Epoch 23, global step 9072: 'val/ADE' reached 3.03430 (best 3.03430), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/os_bitnet_nba_fine_tune-v1.ckpt' as top 1
+Epoch 24, global step 9450: 'val/ADE' was not in top 1
+Epoch 25, global step 9828: 'val/ADE' was not in top 1
+Epoch 26, global step 10206: 'val/ADE' was not in top 1
+Epoch 27, global step 10584: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.011 >= min_delta = 0.0. New best score: 3.023
+Epoch 28, global step 10962: 'val/ADE' reached 3.02330 (best 3.02330), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/nba/os_bitnet_nba_fine_tune-v1.ckpt' as top 1
+Epoch 29, global step 11340: 'val/ADE' was not in top 1
+Epoch 30, global step 11718: 'val/ADE' was not in top 1
+Epoch 31, global step 12096: 'val/ADE' was not in top 1
+Epoch 32, global step 12474: 'val/ADE' was not in top 1
+Epoch 33, global step 12852: 'val/ADE' was not in top 1
