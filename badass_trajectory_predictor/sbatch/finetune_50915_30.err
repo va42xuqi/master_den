@@ -30,3 +30,15 @@ SLURM auto-requeueing enabled. Setting signal handlers.
 Metric val/ADE improved. New best score: 2.762
 Epoch 0, global step 378: 'val/ADE' reached 2.76197 (best 2.76197), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_bitnet_nba_fine_tune-v1.ckpt' as top 1
 Epoch 1, global step 756: 'val/ADE' was not in top 1
+Epoch 2, global step 1134: 'val/ADE' was not in top 1
+Epoch 3, global step 1512: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.380 >= min_delta = 0.0. New best score: 2.382
+Epoch 4, global step 1890: 'val/ADE' reached 2.38194 (best 2.38194), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_bitnet_nba_fine_tune-v1.ckpt' as top 1
+Epoch 5, global step 2268: 'val/ADE' was not in top 1
+Epoch 6, global step 2646: 'val/ADE' was not in top 1
+Epoch 7, global step 3024: 'val/ADE' was not in top 1
+Epoch 8, global step 3402: 'val/ADE' was not in top 1
+Epoch 9, global step 3780: 'val/ADE' was not in top 1
+Epoch 10, global step 4158: 'val/ADE' was not in top 1
+Epoch 11, global step 4536: 'val/ADE' was not in top 1
+Epoch 12, global step 4914: 'val/ADE' was not in top 1
