@@ -113,3 +113,21 @@ Metric val/ADE improved by 0.010 >= min_delta = 0.0. New best score: 2.153
 Epoch 70, global step 26838: 'val/ADE' reached 2.15279 (best 2.15279), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_bitnet_nba_fine_tune-v1.ckpt' as top 1
 Epoch 71, global step 27216: 'val/ADE' was not in top 1
 Epoch 72, global step 27594: 'val/ADE' was not in top 1
+Epoch 73, global step 27972: 'val/ADE' was not in top 1
+Epoch 74, global step 28350: 'val/ADE' was not in top 1
+Epoch 75, global step 28728: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.041 >= min_delta = 0.0. New best score: 2.112
+Epoch 76, global step 29106: 'val/ADE' reached 2.11172 (best 2.11172), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_bitnet_nba_fine_tune-v1.ckpt' as top 1
+Epoch 77, global step 29484: 'val/ADE' was not in top 1
+Epoch 78, global step 29862: 'val/ADE' was not in top 1
+Epoch 79, global step 30240: 'val/ADE' was not in top 1
+Epoch 80, global step 30618: 'val/ADE' was not in top 1
+Epoch 81, global step 30996: 'val/ADE' was not in top 1
+Epoch 82, global step 31374: 'val/ADE' was not in top 1
+Epoch 83, global step 31752: 'val/ADE' was not in top 1
+Epoch 84, global step 32130: 'val/ADE' was not in top 1
+Epoch 85, global step 32508: 'val/ADE' was not in top 1
+Epoch 86, global step 32886: 'val/ADE' was not in top 1
+Epoch 87, global step 33264: 'val/ADE' was not in top 1
+Metric val/ADE improved by 0.022 >= min_delta = 0.0. New best score: 2.089
+Epoch 88, global step 33642: 'val/ADE' reached 2.08949 (best 2.08949), saving model to '/data/beegfs/home/gosalcds/master_den/badass_trajectory_predictor/checkpoints/soc/uni_bitnet_nba_fine_tune-v1.ckpt' as top 1
