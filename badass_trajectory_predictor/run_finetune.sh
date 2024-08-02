@@ -51,4 +51,4 @@ else
 fi
 
 # Run finetuning
-srun --gres=gpu:1 python train.py --arch=$ARCH --scene=$FINE_TUNE_SCENE --mode=train --fine_tune
+srun --gres=gpu:1 python train.py --arch=$ARCH --scene=$SCENE --fine_tune_scene=$FINE_TUNE_SCENE --mode=train --fine_tune

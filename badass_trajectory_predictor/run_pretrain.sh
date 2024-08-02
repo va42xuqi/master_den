@@ -8,18 +8,40 @@
 #SBATCH --output=sbatch/pretrain_%A_%a.out
 #SBATCH --array=0-43  # Array indices for 44 jobs
 
-# Submit the training job, dependent on the pretraining job completing
-TRAIN_JOB_ID=$(sbatch --parsable --dependency=afterok:$PRETRAIN_JOB_ID run_train.sh)
-if [ -z "$TRAIN_JOB_ID" ]; then
-    echo "Failed to submit train job"
-    exit 1
-fi
-echo "Submitted train job with ID $TRAIN_JOB_ID, dependent on pretrain job $PRETRAIN_JOB_ID"
+# Define arrays for architectures and scenes
+ARCHS=("ostf"
+    "oslstm"
+    "oslmu"
+    "one_layer_linear"
+    "two_layer_linear"
+    "os_bitnet"
+    "uni_lstm"
+    "uni_lmu"
+    "uni_bitnet"
+    "uni_trafo"
+    "pos_lstm"
+    "vel_lstm"
+    "pos_lmu"
+    "vel_lmu"
+    "pos_bitnet"
+    "vel_bitnet"
+    "pos_trafo"
+    "vel_trafo"
+    "pos_1l_linear"
+    "vel_1l_linear"
+    "pos_2l_linear"
+    "vel_2l_linear")
+SCENES=("SOC" "NBA")
 
-# Submit the fine-tuning job, dependent on the training job completing
-FINETUNE_JOB_ID=$(sbatch --parsable --dependency=afterok:$TRAIN_JOB_ID run_finetune.sh)
-if [ -z "$FINETUNE_JOB_ID" ]; then
-    echo "Failed to submit finetune job"
-    exit 1
-fi
-echo "Submitted finetune job with ID $FINETUNE_JOB_ID, dependent on train job $TRAIN_JOB_ID"
+# Calculate indices
+NUM_ARCHS=${#ARCHS[@]}
+NUM_SCENES=${#SCENES[@]}
+TASK_ID=$SLURM_ARRAY_TASK_ID
+ARCH_IDX=$((TASK_ID % NUM_ARCHS))
+SCENE_IDX=$(((TASK_ID / NUM_ARCHS) % NUM_SCENES))
+
+ARCH=${ARCHS[$ARCH_IDX]}
+SCENE=${SCENES[$SCENE_IDX]}
+
+# Run finetuning
+srun --gres=gpu:1 python train.py --arch=$ARCH --scene=$SCENE --mode=train --pretrain
