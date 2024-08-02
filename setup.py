@@ -12,11 +12,11 @@ __status__ = "Development"
 from setuptools import setup, find_packages
 
 setup(
-    name="badass_trajectory_predictor",
+    name="project",
     version="1.0.0",
-    description="The badass Transformer user",
+    description="This is the main package of the project",
     author="Denis Gosalci",
     author_email="denis.gosalci@iis.fraunhofer.de",
-    url="https://gitlab.cs.fau.de/the-badass-trajectory-predictors/master_denis",
+    url="https://github.com/va42xuqi/master_den",
     packages=find_packages(),
 )
