@@ -13,3 +13,4 @@ data.tar.gz
 checkpoints*
 *.out
 *.err
+*.egg-info
