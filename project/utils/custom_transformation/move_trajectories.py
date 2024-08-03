@@ -1,9 +1,7 @@
 from ..dataset_base import BaseTransformation
-import numpy as np
 
 
 class MoveTrajectories(BaseTransformation):
-
     def __init__(self, x_and_y=True, search_index=0, move_to=0):
         super().__init__()
         self.x_and_y = x_and_y

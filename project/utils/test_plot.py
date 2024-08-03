@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import torch
 
+
 def plot_error_angular_error(distances, angles, scene, model_name):
     plt.figure(figsize=(10, 10))
     plt.plot(angles, distances, "o")

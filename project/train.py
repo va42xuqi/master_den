@@ -143,7 +143,7 @@ def load(
         logger = TensorBoardLogger("log", name=names_scene)
     elif logger == "wandb":
         logger = WandbLogger(log_model="all", name=name)
-    else: # not implemented or invalid logger
+    else:  # not implemented or invalid logger
         logger = None
 
     trainer = pl.Trainer(
