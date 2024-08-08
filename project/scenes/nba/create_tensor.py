@@ -120,7 +120,7 @@ if __name__ == "__main__":
     ###### CONFIG ######
     # 0: False, 1: True
     fast_dev_run = 0
-    make_unzip = 1
+    make_unzip = 0
     make_smalls = 1
     make_combine = 1
     ####################

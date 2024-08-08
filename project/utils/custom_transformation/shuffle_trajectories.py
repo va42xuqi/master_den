@@ -1,5 +1,4 @@
 from project.utils.dataset_base import BaseTransformation
-import numpy as np
 import torch
 
 
@@ -11,16 +10,11 @@ class ShuffleTrajectories(BaseTransformation):
         self.n_players = n_players
 
     def forward(self, x, y, start_pos):
-        # Mischen Sie nur die ersten n Spieler
+        # erste n Spieler mischen
         indices_low = torch.randperm(self.n_players)
         x[: self.n_players] = x[indices_low]
         y[: self.n_players] = y[indices_low]
         start_pos[: self.n_players] = start_pos[indices_low]
-
-        # Überprüfen Sie die sure_shuffle Bedingung
-        if self.sure_shuffle != -1:
-            if indices[self.sure_shuffle] == self.sure_shuffle:
-                x, y, start_pos = self.forward(x, y, start_pos)
 
         indices_high = torch.randperm(x.shape[0] - self.n_players) + self.n_players
         x[self.n_players :] = x[indices_high]

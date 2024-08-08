@@ -1,6 +1,5 @@
 plots
 build
-badass_trajectory_predictor.egg-info
 logger
 log
 __pycache__
@@ -14,3 +13,4 @@ checkpoints*
 *.out
 *.err
 *.egg-info
+*.sh

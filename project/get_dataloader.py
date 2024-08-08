@@ -5,12 +5,9 @@ This file contains the function data_loader(scene) which returns the dataloader 
 import torch
 
 from project import scenes
-from project.utils import dataset_base
 
 import scenes.nba.config as nba_config
-import scenes.eth.config as eth_config
 import scenes.soc.config as soc_config
-import scenes.car.config as car_config
 
 
 def data_loader(scene, arch=None, mode="NBA", min_sequence_length=0):
@@ -23,19 +20,13 @@ def data_loader(scene, arch=None, mode="NBA", min_sequence_length=0):
             mode=mode, arch=arch, min_sequence_length=min_sequence_length
         )
         config = nba_config
-    elif scene == "ETH":
-        data = scenes.get_dataloader_eth()
-        config = eth_config
     elif scene == "SOC":
         data = scenes.get_dataloader_soc(
             mode=mode, arch=arch, min_sequence_length=min_sequence_length
         )
         config = soc_config
-    elif scene == "CAR":
-        data = scenes.get_dataloader_car()
-        config = car_config
     else:
-        raise ValueError("Scene must be 'NBA' or 'ETH'")
+        raise ValueError("Scene must be 'NBA' or 'SOC'")
 
     data.dataset.x = data.dataset.x.to(device)
     data.dataset.y = data.dataset.y.to(device)
