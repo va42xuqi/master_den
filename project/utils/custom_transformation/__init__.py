@@ -1,5 +1,9 @@
 from .check_one_trajectory_at_least import CheckTrajectory
-from .velocity_transformation import VelocityTransformation, velocity_vector_to_position_vector, position_to_distance
+from .velocity_transformation import (
+    VelocityTransformation,
+    velocity_vector_to_position_vector,
+    position_to_distance,
+)
 from .last_transformation import LastTransformation
 from .fix_values import FixValues
 from .sort_trajectories import SortTrajectories

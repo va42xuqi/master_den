@@ -1,0 +1,10 @@
+codecarbon==2.5.0
+lightning==2.0.9.post0
+matplotlib==3.7.2
+numpy==2.0.1
+pandas==1.5.3
+Pillow==9.3.0
+py7zr==0.20.5
+scipy==1.14.0
+setuptools==66.0.0
+torch==2.1.2

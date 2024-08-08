@@ -60,7 +60,9 @@ class VelocityTransformation(BaseTransformation):
 
         x = x[:, :, : x.shape[2] - 1]
         if self.max_velocity > 0:
-            if not self.check_velocity(x, self.has_ball) or not self.check_velocity(y, self.has_ball):
+            if not self.check_velocity(x, self.has_ball) or not self.check_velocity(
+                y, self.has_ball
+            ):
                 return None, None, None
 
         return x, y, startpos
