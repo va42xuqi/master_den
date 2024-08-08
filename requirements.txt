@@ -1,0 +1,15 @@
+av2==0.2.1
+click==8.1.7
+codecarbon==2.5.1
+joblib==1.4.2
+lightning==2.4.0
+matplotlib==3.9.1.post1
+numpy==2.0.1
+pandas==2.2.2
+Pillow==10.4.0
+py7zr==0.21.1
+Requests==2.32.3
+rich==13.7.1
+scipy==1.14.0
+setuptools==72.1.0
+torch==2.4.0
