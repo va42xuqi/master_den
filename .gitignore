@@ -1,16 +1,26 @@
-plots
+# Byte-compiled / optimized / DLL files
 build
-logger
-log
 __pycache__
 .idea
-check_parquet.
-wandb
+
+# logs
 lightning_logs
-data
-data.tar.gz
-checkpoints*
+output_logs
+wandb
 *.out
+!info_*.out
 *.err
 *.egg-info
+
+#checkpoints
+checkpoints*
+benchmark
+
+# png files and other results
+plots
+
+# big data files
+data
+
+# cluster only
 *.sh

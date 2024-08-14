@@ -191,15 +191,18 @@ def load(
             model_name=model_names[i],
             test_dataloader=data.dataset.get_test(),
             num_samples=None,
-            scene=scene,
+            scene=scene if not fine_tune else fine_tune_scene,
             pred_len=pred_len,
+            pretrained=pretrain,
+            fine_tuned=fine_tune,
+            hist_len=hist_len,
         )
 
 
 if __name__ == "__main__":
     arg = argparse.ArgumentParser()
-    arg.add_argument("--arch", type=str, default="ostf")
-    arg.add_argument("--mode", type=str, default="train")
+    arg.add_argument("--arch", type=str, default="uni_lmu")
+    arg.add_argument("--mode", type=str, default="benchmark")
     arg.add_argument("--scene", type=str, default="SOC")
     arg.add_argument("--pred_len", type=int, default=100)
     arg.add_argument("--hist_len", type=int, default=50)
