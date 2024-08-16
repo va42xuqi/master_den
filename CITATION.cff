@@ -1,9 +1,39 @@
-cff-version: 1.1.0
-message: "If you use this software, please cite it as below."
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: master_den
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
 authors:
-- family-names: Gosalci
-  given-names: Denis
-orcid: https://orcid.org/0009-0008-3769-3118
-title:va42xuqi/master_den: v1.0.0
-version: masterthesis
-date-released: 2024-08-16
+  - given-names: Denis
+    family-names: Gosalci
+    name-suffix: B.Sc.
+    email: denisgosalci@outook.de
+    orcid: 'https://orcid.org/0009-0008-3769-3118'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.13332150
+    description: created with zenodo
+repository-code: 'https://github.com/va42xuqi/master_den.git'
+abstract: >-
+  This work evaluates the performance of various neural
+  networks in predicting human trajectories in high-dynamic
+  environments with non-linear movements.
+keywords:
+  - Trajectory Forecasting
+  - Sports Analytics
+  - Deep Learning
+  - Reccurent Neural Network
+  - Long-Short-Term-Memory (LSTM)
+  - Attention
+  - Transformer
+  - Transfer Learning
+  - Legendre Memory Units (LMU)
+  - Benchmarking
+license: MIT
+commit: c978ed9e0081e744d72ae707bb21e1ed5b27d80a
+version: v.1.0.0
+date-released: '2024-08-16'
