@@ -8,7 +8,7 @@ exclude = ["data*", "plots*", "output_logs*"]
 
 [project]
 name = "master_den"
-version = "1.0.0"
+version = "1.1.0"
 description = "This work evaluates the performance of various neural networks in predicting human trajectories in high-dynamic environments with non-linear movements."
 readme = "README.md"
 requires-python = ">=3.8"
