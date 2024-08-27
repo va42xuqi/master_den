@@ -12,12 +12,8 @@ authors:
     family-names: Gosalci
     name-suffix: B.Sc.
     email: denisgosalci@outook.de
-    orcid: 'https://orcid.org/0009-0008-3769-3118'
-identifiers:
-  - type: doi
-    value: 10.5281/zenodo.13332150
-    description: created with zenodo
-repository-code: 'https://github.com/va42xuqi/master_den.git'
+    orcid: "https://orcid.org/0009-0008-3769-3118"
+repository-code: "https://github.com/va42xuqi/master_den.git"
 abstract: >-
   This work evaluates the performance of various neural
   networks in predicting human trajectories in high-dynamic
@@ -34,6 +30,12 @@ keywords:
   - Legendre Memory Units (LMU)
   - Benchmarking
 license: MIT
-commit: c978ed9e0081e744d72ae707bb21e1ed5b27d80a
-version: v.1.0.0
-date-released: '2024-08-16'
+version: v.1.1.0
+date-released: "2024-08-16"
+doi: 10.5281/zenodo.13332150
+citation-text: >-
+  Denis Gosalci. (2024). master_den: master_den v.1.0.0 (Version v.1.0.0).
+  Zenodo. https://doi.org/10.5281/zenodo.13332150
+  [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13332150.svg)](https://doi.org/10.5281/zenodo.13332150)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  [![GitHub commit](https://img.shields.io/github/last-commit/va42xuqi/master_den)](
