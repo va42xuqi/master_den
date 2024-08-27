@@ -11,6 +11,7 @@ wandb
 !info_*.out
 *.err
 *.egg-info
+.github
 
 #checkpoints
 checkpoints*
@@ -24,3 +25,8 @@ data
 
 # cluster only
 *.sh
+
+# ignore notebooks (big files)
+*.ipynb
+
+dist
