@@ -34,8 +34,8 @@ version: v.1.1.0
 date-released: "2024-08-16"
 doi: 10.5281/zenodo.13332150
 citation-text: >-
-  Denis Gosalci. (2024). master_den: master_den v.1.0.0 (Version v.1.0.0).
-  Zenodo. https://doi.org/10.5281/zenodo.13332150
+  Denis Gosalci. (2024). *master_den*: master_den v.1.0.0 (Version v.1.0.0). Zenodo. [https://doi.org/10.5281/zenodo.13332150](https://doi.org/10.5281/zenodo.13332150)
+
   [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.13332150.svg)](https://doi.org/10.5281/zenodo.13332150)
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-  [![GitHub commit](https://img.shields.io/github/last-commit/va42xuqi/master_den)](
+  [![GitHub commit](https://img.shields.io/github/last-commit/va42xuqi/master_den)](https://github.com/va42xuqi/master_den)
