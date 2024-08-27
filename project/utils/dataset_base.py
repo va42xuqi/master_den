@@ -60,7 +60,7 @@ class CustomDataloader(pl.LightningDataModule):
             path: str = os.path.join(path, "tensor", name + ".pt")
             if not os.path.exists(path):
                 raise ValueError(f"Path {path} does not exist")
-            self.dataset = torch.load(path)
+            self.dataset = torch.load(path, weights_only=True)
             if split is None:
                 split = [0.7, 0.9, 1]
             self.dataset.split = split
@@ -440,8 +440,7 @@ class Compose(object):
             for t in self.transforms:
                 x, y, start_pos = t.forward(x, y, start_pos)
         return x, y, start_pos
-
-
+        
 def txt_to_csv(path, split=" ", headers=None):
     with open(f"{path}.txt", "r") as in_file:
         stripped = (line.strip() for line in in_file)

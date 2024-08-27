@@ -1,29 +1,66 @@
 [build-system]
-requires = ["setuptools >= 61.0"]
+requires = ["setuptools >= 64", "wheel"]
 build-backend = "setuptools.build_meta"
-
-[tool.setuptools]
-include-package-data = false
-
-[project]
-name = "master_den"
-version = "1.0.0"
-authors = [
-  { name="Denis Gosalci", email="denisgosalci@outlook.de" },
-]
-description = "This work evaluates the performance of various neural networks in predicting human trajectories in high-dynamic environments with non-linear movements."
-readme = "README.md"
-requires-python = ">=3.8"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-]
 
 [tool.setuptools.packages.find]
 include = ["project*"]
 exclude = ["data*", "plots*", "output_logs*"]
 
+[project]
+name = "master_den"
+version = "1.0.0"
+description = "This work evaluates the performance of various neural networks in predicting human trajectories in high-dynamic environments with non-linear movements."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+keywords = ["Trajectory Forecasting", "Sports Analytics", "Deep Learning", "Recurrent Neural Network", "LSTM", "Attention", "Transformer", "Transfer Learning", "LMU", "Benchmarking"]
+authors = [
+  {name = "Denis Gosalci", email = "denisgosalci@outlook.de"}
+]
+maintainers = [
+  {name = "Denis Gosalci", email = "denisgosalci@outlook.de"}
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Education",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: POSIX :: Linux",
+]
+dependencies = [
+    "av2==0.2.1",
+    "click==8.1.7",
+    "codecarbon==2.5.1",
+    "joblib==1.4.2",
+    "lightning==2.4.0",
+    "matplotlib==3.9.1.post1",
+    "numpy==2.0.1",
+    "pandas==2.2.2",
+    "Pillow==10.4.0",
+    "py7zr==0.21.1",
+    "Requests==2.32.3",
+    "rich==13.7.1",
+    "scipy==1.14.0",
+    "wandb>=0.12.10",
+]
+
 [project.urls]
-Homepage = "https://github.com/va42xuqi/master_den"
-Issues = "https://github.com/va42xuqi/master_den/issues"
+"Homepage" = "https://github.com/va42xuqi/master_den"
+"Bug Reports" = "https://github.com/va42xuqi/master_den/issues"
+"Documentation" = "https://github.com/va42xuqi/master_den/wiki"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12.0"
+torch = {version = "^2.0.1+cu118", source = "torch118"}
+torchvision = {version = "^0.15.2+cu118", source =     "torch118"}
+
+[[tool.poetry.source]]
+name = "torch118"
+url = "https://download.pytorch.org/whl/cu118"
+priority = "explicit"

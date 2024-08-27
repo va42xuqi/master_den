@@ -121,6 +121,7 @@ def load(
         checkpoint = torch.load(
             f"checkpoints/{scene.lower()}/{checkpoint_name}",
             map_location=torch.device("cuda" if torch.cuda.is_available() else "cpu"),
+            weights_only=True,
         )
         model.load_state_dict(checkpoint["state_dict"])
         return model

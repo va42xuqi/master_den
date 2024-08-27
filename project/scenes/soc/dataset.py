@@ -4,7 +4,6 @@ from project.scenes.soc import config
 import pandas as pd
 import torch
 
-
 class CustomFinalDataset(dataset_base.FinalDataset):
 
     def __init__(self, dataset, start, length, isTest=False):
