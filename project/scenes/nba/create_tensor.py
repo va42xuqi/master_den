@@ -121,7 +121,7 @@ if __name__ == "__main__":
     # 0: False, 1: True
     fast_dev_run = 0
     make_unzip = 0
-    make_smalls = 1
+    make_smalls = 0
     make_combine = 1
     ####################
 
