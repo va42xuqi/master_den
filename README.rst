@@ -39,7 +39,7 @@ Setup Instructions
 Prerequisites
 ^^^^^^^^^^^^^
 
-The project requires a Linux operating system (tested on Ubuntu), Python 3.8 or higher, and Conda is recommended for managing dependencies.
+The project requires a Linux operating system (tested on UNKNOWN YET), Python 3.8 or higher, and Conda is recommended for managing dependencies.
 
 Installation
 ^^^^^^^^^^^^
