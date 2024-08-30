@@ -27,11 +27,41 @@ This project provides a framework for testing and comparing different neural net
 Models Included
 ---------------
 
-- **Linear Regression**: A simple baseline model.
-- **LSTM**: A popular recurrent neural network model.
-- **LMU**: A newer architecture designed to remember longer sequences.
-- **Transformer**: An attention-based model originally designed for NLP tasks.
-- **BitNet**: A binary neural network optimized for efficiency.
+The project includes a wide range of models, categorized as follows:
+
+- **Naive Models**: 
+  - ``one_layer_linear``
+  - ``two_layer_linear``
+  - ``pos_1l_linear`` (Position-Only One Layer Linear)
+  - ``vel_1l_linear`` (Velocity-Only One Layer Linear)
+  - ``pos_2l_linear`` (Position-Only Two Layer Linear)
+  - ``vel_2l_linear`` (Velocity-Only Two Layer Linear)
+
+- **Traditional Models**:
+  - ``oslstm`` (One-Step LSTM)
+  - ``oslmu`` (One-Step LMU)
+  - ``uni_lstm`` (Univariate LSTM)
+  - ``uni_lmu`` (Univariate LMU)
+  - ``pos_lstm`` (Position-Only LSTM)
+  - ``vel_lstm`` (Velocity-Only LSTM)
+  - ``pos_lmu`` (Position-Only LMU)
+  - ``vel_lmu`` (Velocity-Only LMU)
+
+- **Novel Strategies**:
+  - ``ostf`` (One-Step Transformer)
+  - ``os_bitnet`` (One-Step BitNet)
+  - ``uni_bitnet`` (Univariate BitNet)
+  - ``uni_trafo`` (Univariate Transformer)
+  - ``pos_bitnet`` (Position-Only BitNet)
+  - ``vel_bitnet`` (Velocity-Only BitNet)
+  - ``pos_trafo`` (Position-Only Transformer)
+  - ``vel_trafo`` (Velocity-Only Transformer)
+
+**Model Naming Conventions**:
+- ``vel``: Velocity-only models
+- ``pos``: Position-only models
+- ``uni``: Univariate models
+- ``os``: One-step prediction models
 
 Setup Instructions
 ------------------
@@ -81,7 +111,7 @@ To run the training script, use the following command::
 
     python train.py --arch <model_name> --mode <mode> --scene <scene> --pred_len 100 --hist_len 50 --logger wandb
 
-Replace ``<model_name>`` with the desired model (e.g., ``linear``, ``lstm``, ``lmu``, ``transformer``, ``bitnet``) and set the appropriate ``mode`` and ``scene`` parameters.
+Replace ``<model_name>`` with the desired model (e.g., ``ostf``, ``oslstm``, ``oslmu``, ``os_bitnet``) and set the appropriate ``mode`` and ``scene`` parameters.
 
 For animations or benchmarks, adjust the mode parameter accordingly::
 
@@ -90,7 +120,7 @@ For animations or benchmarks, adjust the mode parameter accordingly::
 Results
 -------
 
-The results of the model comparisons are stored in the ``results/`` directory. You can find metrics such as Mean Absolute Error (MAE), Root Mean Square Error (RMSE), and others. The project also includes graphical evaluations comparing the predicted trajectories against ground truth.
+The results of the model comparisons are stored in the ``benchmark/`` directory, and visualizations are available in the ``plots/`` directory. You can find metrics such as Mean Absolute Error (MAE), Root Mean Square Error (RMSE), and others, along with graphical evaluations comparing the predicted trajectories against ground truth.
 
 Contributing
 ------------
@@ -101,4 +131,3 @@ License
 -------
 
 This project is licensed under the MIT License. See the ``LICENSE`` file for more details.
-
