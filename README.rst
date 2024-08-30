@@ -102,6 +102,3 @@ License
 
 This project is licensed under the MIT License. See the ``LICENSE`` file for more details.
 
-.. image:: images/model_comparison.png
-   :alt: Model Comparison Graph
-
