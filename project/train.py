@@ -203,7 +203,7 @@ def load(
 if __name__ == "__main__":
     arg = argparse.ArgumentParser()
     arg.add_argument("--arch", type=str, default="one_layer_linear")
-    arg.add_argument("--mode", type=str, default="train")
+    arg.add_argument("--mode", type=str, default="benchmark")
     arg.add_argument("--scene", type=str, default="SOC")
     arg.add_argument("--pred_len", type=int, default=100)
     arg.add_argument("--hist_len", type=int, default=50)

@@ -12,6 +12,9 @@ wandb
 *.err
 *.egg-info
 .github
+.vscode
+results
+tables
 
 #checkpoints
 checkpoints*
@@ -19,6 +22,7 @@ benchmark
 
 # png files and other results
 plots
+tables/
 
 # big data files
 data
