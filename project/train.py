@@ -24,6 +24,7 @@ def load(
     fine_tune: bool = False,
     fine_tune_scene: str = "SOC",
     logger: str = "wandb",
+    test_on_other_team: bool = False,
 ):
     model_names = [
         "ostf",
@@ -197,6 +198,7 @@ def load(
             pretrained=pretrain,
             fine_tuned=fine_tune,
             hist_len=hist_len,
+            test_on_other_team=test_on_other_team,
         )
 
 
@@ -209,6 +211,7 @@ if __name__ == "__main__":
     arg.add_argument("--hist_len", type=int, default=50)
     arg.add_argument("--pretrain", action="store_true")
     arg.add_argument("--fine_tune", action="store_true")
+    arg.add_argument("--test_on_other_team", action="store_true")
     arg.add_argument("--fine_tune_scene", type=str, default="NBA")
     arg.add_argument("--seed", type=int, default=42)
     arg.add_argument("--logger", type=str, default="wandb")
@@ -228,6 +231,7 @@ if __name__ == "__main__":
         args.fine_tune,
         args.fine_tune_scene,
         args.logger,
+        args.test_on_other_team,
     )
 
     # print parameters
@@ -240,3 +244,4 @@ if __name__ == "__main__":
     print("pretrain: ", args.pretrain)
     print("fine_tune: ", args.fine_tune)
     print("fine_tune_scene: ", args.fine_tune_scene)
+    print("test_on_other_team: ", args.test_on_other_team)

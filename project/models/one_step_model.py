@@ -44,7 +44,7 @@ def get_angular_error(y, y_hat):
     return angular_error
 
 
-def random_rotate_blocks(tensor, dim=2):
+def random_rotate_blocks(tensor, dim=2, test_on_other_team=False, shuffle = True):
     """
     Randomly rotate blocks along the specified dimension.
 
@@ -63,7 +63,10 @@ def random_rotate_blocks(tensor, dim=2):
     second_half_permuted = second_half[:, torch.randperm(second_half.size(dim))]
 
     # Concatenate the randomly permuted halves to form the final tensor
-    rotated_tensor = torch.cat((first_half_permuted, second_half_permuted), dim=dim)
+    if test_on_other_team:
+        rotated_tensor = torch.cat((second_half, first_half), dim=dim)
+    else:
+        rotated_tensor = torch.cat((first_half_permuted, second_half_permuted), dim=dim)
 
     return rotated_tensor
 
@@ -225,15 +228,15 @@ class OneStepModel(pl.LightningModule):
             prog_bar=True,
         )
 
-    def step(self, batch, num_batches=10, shuffle=True):
+    def step(self, batch, num_batches=10, shuffle=True, test_on_other_team=False):
         known_features, _, statics = batch
 
         num_obj = known_features.size(1)
         if self.has_ball:
             num_obj -= 1
-        if shuffle:
+        if shuffle or test_on_other_team:
             known_features[:, :num_obj] = random_rotate_blocks(
-                known_features[:, :num_obj], dim=1
+                known_features[:, :num_obj], dim=1, test_on_other_team=test_on_other_team, shuffle=shuffle
             )
 
         statics = statics.unsqueeze(0) if len(statics.shape) == 2 else statics
@@ -320,8 +323,8 @@ class OneStepModel(pl.LightningModule):
 
         return FDE
 
-    def test_step(self, batch, batch_idx, **kwargs):
-        loss, output, x, y = self.step(batch, shuffle=False, num_batches=-1)
+    def test_step(self, batch, batch_idx, test_on_other_team, **kwargs):
+        loss, output, x, y = self.step(batch, shuffle=False, num_batches=-1, test_on_other_team=test_on_other_team)
 
         z = y[:, 0]
 

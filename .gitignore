@@ -22,7 +22,6 @@ benchmark
 
 # png files and other results
 plots
-tables/
 
 # big data files
 data

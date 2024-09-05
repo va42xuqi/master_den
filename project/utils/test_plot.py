@@ -90,8 +90,10 @@ def visualize_predictions(
     fine_tuned=False,
     pretrained=False,
     hist_len=8,
+    test_on_other_team=False,
 ):
     file_suffix = "_finetuned" if fine_tuned else "_pretrained" if pretrained else ""
+    file_suffix += "_other_team" if test_on_other_team else ""
     print(f"start benchmarking {model_name} on {scene} scene")
     # Redirect output to a file
     set_output_file(model_name, scene, file_suffix, hist_len)
@@ -115,7 +117,7 @@ def visualize_predictions(
         with torch.no_grad():
             batch = [s.unsqueeze(0).to(device) for s in sample]
             FDE, ADE, NL_ADE, MSE, MAE, FRE, ARE, loss_list, angular_error, _, _, _ = (
-                model.test_step(batch, -1)
+                model.test_step(batch, -1, test_on_other_team=test_on_other_team)
             )
 
         FDE_list.append(FDE)
