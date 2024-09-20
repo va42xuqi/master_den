@@ -25,26 +25,34 @@ def get_angular_error(y, y_hat):
     Returns:
     torch.Tensor: Angular error between the predicted and ground truth velocity vectors.
     """
-    # Calculate the dot product between the predicted and ground truth velocity vectors
     dot_product = torch.sum(y * y_hat, dim=-2)
-
-    # Calculate the magnitudes of the predicted and ground truth velocity vectors
     magnitude_y = torch.norm(y, dim=-2)
     magnitude_y_hat = torch.norm(y_hat, dim=-2)
+    
+    # Debugging prints
+    print("Dot Product:", dot_product)
+    print("Magnitude y:", magnitude_y)
+    print("Magnitude y_hat:", magnitude_y_hat)
 
-    # Calculate the cosine similarity between the predicted and ground truth velocity vectors
-    cosine_similarity = dot_product / (magnitude_y * magnitude_y_hat + 1e-10)
+    # Avoid division by zero
+    magnitude_product = magnitude_y * magnitude_y_hat
+    magnitude_product = torch.clamp(magnitude_product, min=1e-10)  # Ensure no zero magnitude
 
-    # Clamp the cosine similarity to the valid range [-1, 1]
+    cosine_similarity = dot_product / magnitude_product
+    
+    # Debugging prints
+    print("Cosine Similarity:", cosine_similarity)
+
     cosine_similarity = torch.clamp(cosine_similarity, min=-1, max=1)
-
-    # Calculate the angular error between the predicted and ground truth velocity vectors
     angular_error = torch.acos(cosine_similarity)
+    
+    # Debugging prints
+    print("Angular Error:", angular_error)
 
     return angular_error
 
 
-def random_rotate_blocks(tensor, dim=2, test_on_other_team=False, shuffle = True):
+def random_rotate_blocks(tensor, dim=2):
     """
     Randomly rotate blocks along the specified dimension.
 
@@ -63,10 +71,7 @@ def random_rotate_blocks(tensor, dim=2, test_on_other_team=False, shuffle = True
     second_half_permuted = second_half[:, torch.randperm(second_half.size(dim))]
 
     # Concatenate the randomly permuted halves to form the final tensor
-    if test_on_other_team:
-        rotated_tensor = torch.cat((second_half, first_half), dim=dim)
-    else:
-        rotated_tensor = torch.cat((first_half_permuted, second_half_permuted), dim=dim)
+    rotated_tensor = torch.cat((first_half_permuted, second_half_permuted), dim=dim)
 
     return rotated_tensor
 
@@ -228,15 +233,15 @@ class OneStepModel(pl.LightningModule):
             prog_bar=True,
         )
 
-    def step(self, batch, num_batches=10, shuffle=True, test_on_other_team=False):
+    def step(self, batch, num_batches=10, shuffle=True):
         known_features, _, statics = batch
 
         num_obj = known_features.size(1)
         if self.has_ball:
             num_obj -= 1
-        if shuffle or test_on_other_team:
+        if shuffle:
             known_features[:, :num_obj] = random_rotate_blocks(
-                known_features[:, :num_obj], dim=1, test_on_other_team=test_on_other_team, shuffle=shuffle
+                known_features[:, :num_obj], dim=1
             )
 
         statics = statics.unsqueeze(0) if len(statics.shape) == 2 else statics
@@ -323,15 +328,17 @@ class OneStepModel(pl.LightningModule):
 
         return FDE
 
-    def test_step(self, batch, batch_idx, test_on_other_team, **kwargs):
-        loss, output, x, y = self.step(batch, shuffle=False, num_batches=-1, test_on_other_team=test_on_other_team)
+    def test_step(self, batch, batch_idx, **kwargs):
+        loss, output, x, y = self.step(batch, shuffle=False, num_batches=-1)
 
         z = y[:, 0]
 
         angular_error = get_angular_error(z, output).detach().cpu()
 
-        FRE = angular_error[:, -1] * 180 / np.pi  # Final Radian Error
-        ARE = angular_error.detach() * 180 / np.pi  # Average Radian Error
+        angular_error * 180 / np.pi
+        
+        FRE = angular_error[:, -1]  # Final Radian Error
+        ARE = angular_error.detach()  # Average Radian Error
 
         output_pos, predict_pos = self.get_pos(z, output, pred_len=self.prediction_len)
 

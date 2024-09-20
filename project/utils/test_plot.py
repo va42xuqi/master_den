@@ -153,8 +153,8 @@ def visualize_predictions(
     error_var = error.std(axis=0)
 
     angular_error = np.concatenate(angular_error_list, axis=0)
-    angular_mean = moving_average(angular_error.mean(axis=0))
-    angular_var = moving_average(angular_error.std(axis=0))
+    angular_mean = angular_error.mean(axis=0)
+    angular_var = angular_error.std(axis=0)
 
     # Capture metrics at specific time steps
     time_steps = [24, 49, 74, 99]

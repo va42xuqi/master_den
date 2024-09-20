@@ -15,25 +15,6 @@ def pos_to_basket(x, basket_positions):
     dist = basket_positions - pos
     return dist
 
-
-class CNNEncoder(nn.Module):
-    def __init__(
-        self,
-        in_channels,
-        out_channels,
-        kernel_size,
-        stride,
-        padding,
-    ):
-        super().__init__()
-        self.conv = nn.Conv1d(
-            in_channels=in_channels,
-            out_channels=out_channels,
-            kernel_size=kernel_size,
-            stride=stride,
-            padding=padding,
-        )
-
     def forward(self, x, statics):
         x = x.permute(0, 2, 1)
         x = self.conv(x)
@@ -45,39 +26,29 @@ class CNNEncoder(nn.Module):
 class UniLSTM(OneStepModel):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        use_cnn = False
-        if use_cnn:
-            self.encoder = CNNEncoder(
-                in_channels=6,
-                out_channels=self.hidden_size,
-                kernel_size=26,
-                stride=26,
-                padding=0,
-            )
-        self.x_preprocessing = LMU(
+        self.lstm1x = nn.LSTM(
             input_size=self.in_features // 2,
             hidden_size=self.hidden_size,
-            memory_size=self.hidden_size,
-            theta=25,
-            learn_a=True,
-            learn_b=True,
+            num_layers=1,
+            batch_first=True,
+            dropout=self.dropout,
         )
-        self.y_preprocessing = LMU(
-            input_size=self.in_features // 2,
-            hidden_size=self.hidden_size,
-            memory_size=self.hidden_size,
-            theta=25,
-            learn_a=True,
-            learn_b=True,
-        )
-        self.x_lstm = nn.LSTM(
+        self.dropout_layer = nn.Dropout(0.1)
+        self.lstm2x = nn.LSTM(
             input_size=self.hidden_size,
             hidden_size=self.hidden_size,
             num_layers=1,
             batch_first=True,
             dropout=self.dropout,
         )
-        self.y_lstm = nn.LSTM(
+        self.lstm1y = nn.LSTM(
+            input_size=self.in_features // 2,
+            hidden_size=self.hidden_size,
+            num_layers=1,
+            batch_first=True,
+            dropout=self.dropout,
+        )
+        self.lstm2y= nn.LSTM(
             input_size=self.hidden_size,
             hidden_size=self.hidden_size,
             num_layers=1,
@@ -95,21 +66,28 @@ class UniLSTM(OneStepModel):
     def forward(self, src, statics):
         h0 = torch.zeros(1, src.size(0), self.hidden_size).to(src.device)
         c0 = torch.zeros(1, src.size(0), self.hidden_size).to(src.device)
-        state = (h0, c0)
+        state1x = (h0.clone(), c0.clone())
+        state2x = (h0.clone(), c0.clone())
+        state1y = (h0.clone(), c0.clone())
+        state2y = (h0.clone(), c0.clone())
 
-        x_out, y_out, x_statics, y_statics = self.preprocess_data((src, statics))
+        x_out, y_out, _, _ = self.preprocess_data((src, statics))
 
         x_out = x_out.flatten(2, 3)
-        x_encod, x_state = self.x_preprocessing(x_out, self.state)
-        x_src = self.x_lstm(x_encod, state)[1][1].squeeze(0)
-        x_src = self.x_fc_out(x_src)
+        x_out, _ = self.lstm1x(x_out, state1x)
+        x_out = self.dropout_layer(x_out)
+        x_out, _ = self.lstm2x(x_out, state2x)
+        x_out = self.x_fc_out(x_out[:, -1:])
 
         y_out = y_out.flatten(2, 3)
-        y_encod, y_state = self.y_preprocessing(y_out, self.state)
-        y_src = self.y_lstm(y_encod, state)[1][1].squeeze(0)
-        y_src = self.y_fc_out(y_src)
+        y_out, _ = self.lstm1y(y_out, state1y)
+        y_out = self.dropout_layer(y_out)
+        y_out, _ = self.lstm2y(y_out, state2y)
+        y_out = self.y_fc_out(y_out[:, -1:])
 
-        src = torch.cat([x_src.unsqueeze(-1), y_src.unsqueeze(-1)], dim=-1)
+        x_out = torch.swapaxes(x_out, 1, 2)
+        y_out = torch.swapaxes(y_out, 1, 2)
+        src = torch.cat([x_out, y_out], dim=-1)
         return src
 
     def preprocess_data(self, data):

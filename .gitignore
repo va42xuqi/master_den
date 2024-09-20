@@ -2,6 +2,7 @@
 build
 __pycache__
 .idea
+*.yaml
 
 # logs
 lightning_logs
@@ -14,11 +15,14 @@ wandb
 .github
 .vscode
 results
+!results/*.py
 tables
 
 #checkpoints
 checkpoints*
 benchmark
+comparison_plots/
+!comparison_plots/*.py
 
 # png files and other results
 plots

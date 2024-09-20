@@ -64,13 +64,6 @@ class OneStepBitNet(OneStepModel):
         self.pos_enc = generate_legendre_positional_encodings(
             self.history_len, self.hidden_size, 15
         )
-        # self.lmu = LMUFFT(
-        #    input_size=13 * 4,
-        #    hidden_size=self.hidden_size,
-        #    memory_size=256,
-        #    theta=25,
-        #    seq_len=self.history_len,
-        # )
         self.encoder = BitNetLayer(
             n_blocks=n_blocks,
             input_dim=self.hidden_size,
