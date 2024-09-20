@@ -14,15 +14,14 @@ wandb
 *.egg-info
 .github
 .vscode
-results
-!results/*.py
 tables
 
 #checkpoints
 checkpoints*
-benchmark
-comparison_plots/
-!comparison_plots/*.py
+*.png
+*.csv
+*.tex
+*.npy
 
 # png files and other results
 plots
