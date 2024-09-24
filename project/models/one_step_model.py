@@ -336,7 +336,7 @@ class OneStepModel(pl.LightningModule):
         angular_error = get_angular_error(z, output).detach().cpu()
 
         angular_error * 180 / np.pi
-        
+
         FRE = angular_error[:, -1]  # Final Radian Error
         ARE = angular_error.detach()  # Average Radian Error
 
