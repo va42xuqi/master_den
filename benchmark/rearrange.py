@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 from tqdm import tqdm
+import numpy as np  # Import numpy for efficient calculations
 
 # Directory containing the CSV files
 directory = "benchmark"
@@ -38,7 +39,11 @@ for metadata in tqdm(files_metadata, desc="Processing files"):
 
     # Load the CSV file into a DataFrame
     df = pd.read_csv(file_path)
-
+    
+    # Convert values to radians if they are greater than 20
+    # Exclude the 'Metric' column from the conversion
+    df.loc[:, df.columns != 'Metric'] = df.loc[:, df.columns != 'Metric'].applymap(lambda x: np.radians(x) if x > 20 else x)
+    
     # Process the DataFrame as needed
     times = [25, 50, 75, 100]
     new_rows = []  # List to store new rows

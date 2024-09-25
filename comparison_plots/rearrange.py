@@ -37,7 +37,13 @@ def collect_and_save_data(root_dir, save_dir):
                     error_mean = np.load(error_mean_path)
                     error_std = np.load(error_std_path)
 
-                    # Combine into a tensor or dataframe
+                    # Convert values greater than 20 to radians
+                    angular_mean = np.where(angular_mean > 20, np.radians(angular_mean), angular_mean)
+                    angular_std = np.where(angular_std > 20, np.radians(angular_std), angular_std)
+                    error_mean = np.where(error_mean > 20, np.radians(error_mean), error_mean)
+                    error_std = np.where(error_std > 20, np.radians(error_std), error_std)
+
+                    # Combine into a DataFrame
                     combined_data = {
                         'angular_mean': angular_mean.flatten(),
                         'angular_std': angular_std.flatten(),  # Treat var as std as mentioned
