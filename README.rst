@@ -71,7 +71,7 @@ Prerequisites
 
 This project requires the following configuration:
 
-- **Operating System**: Linux (POSIX compliant), tested on Ubuntu
+- **Operating System**: Linux (POSIX compliant), tested on CentOS High Performance Cluster
 - **Python**: 3.8 or higher
 - **CUDA**: GPU support recommended for training (tested with CUDA 11.8)
 - **Dependencies**: Listed in ``pyproject.toml``, installable via ``pip``
