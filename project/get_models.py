@@ -109,7 +109,7 @@ def load_ostf(
     fine_tune=False,
 ) -> pl.LightningModule:
     model = OneStepTrafo(
-        hidden_size=256,
+        hidden_size=512,
         history_len=hist_len,
         prediction_len=pred_len,
         num_players=config.OBJECT_AMOUNT,
@@ -118,7 +118,7 @@ def load_ostf(
         config=config,
         n_blocks=6,
         n_heads=8,
-        ffn_hidden=1024,
+        ffn_hidden=2048,
         has_goals=has_goals,
         pretrain=pretrain,
         fine_tune=fine_tune,

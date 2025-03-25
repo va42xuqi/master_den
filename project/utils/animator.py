@@ -28,6 +28,7 @@ def animate(
     frame_size=None,
     multi_object_function=None,
     scene="NBA",
+    test_on_other_team=False,
 ):
     gs = gridspec.GridSpec(1, 2, width_ratios=[2, 1])
     fig = plt.figure(figsize=(16, 9))
@@ -68,15 +69,26 @@ def animate(
 
     # Preprocess data
     all_x, all_y, all_y_hat = [], [], []
+    events = []
     for i in range(data_len):
         # verbose
-        print(f"\r[Animation] Preprocessing data: {i / data_len * 100:.2f}%", end="")
-        batch = dataset.__getitem__(i)
-        with torch.no_grad():
-            _, _, _, y_hat, _, x, y, _ = model.test_step(batch, -1)
-        all_x.append(x)
-        all_y.append(y)
-        all_y_hat.append(y_hat)
+        
+        if i == 10:
+            device = "cuda" if torch.cuda.is_available() else "cpu"
+            print(f"\r[Animation] Preprocessing data: {i / data_len * 100:.2f}%", end="")
+            batch = dataset.__getitem__(i)
+            with torch.no_grad():
+                        batch = [s.unsqueeze(0) for s in batch]
+                        FDE, ADE, NL_ADE, MSE, MAE, FRE, ARE, loss_list, angular_error, y_hat, x, y = (
+                            model.test_step(batch, -1, test_on_other_team=test_on_other_team)
+                        )
+            all_x.append(x)
+            all_y.append(y[..., :12])
+            all_y_hat.append(y_hat[..., :12])
+            events.append([i] * x.size(0))
+
+    # flatten events
+    events = [item for sublist in events for item in sublist]
 
     print("\n")
 
@@ -121,6 +133,7 @@ def animate(
             img = Image.open(img_path).convert("L")
             arr = 1 - np.asarray(img)
 
+
     def update(
         i,
         axs=axs,
@@ -128,6 +141,7 @@ def animate(
         input_plot=input_plot,
         target_plot=target_plot,
         output_plot=output_plot,
+        zoom = False,
     ):
         print(f"\r[Animation] Creating frame: {i / frames * 100:.2f}%", end="")
         sys.stdout.flush()
@@ -136,9 +150,9 @@ def animate(
         axs[1].clear()
 
         for j in range(0, input_plot.shape[1]):
-            multi_object_function(axs[0], j, input_plot[i], target_plot[i], rest=None)
+            multi_object_function(axs[0], j, input_plot[i], target_plot[i], rest=None, zoom=zoom)
 
-        if img_path is not None:
+        if img_path is not None and not zoom:
             ax1.imshow(
                 arr, cmap="gray", vmin=0, vmax=255, extent=[min_x, max_x, min_y, max_y]
             )
@@ -151,23 +165,24 @@ def animate(
         range_x = np.arange(1, len(dis) + 1)
 
         # axs[0].plot(tar[0], tar[1], label="Target", color=col[0])
-        axs[0].plot(out[0], out[1], label="Estimated", color=col[1])
+        #axs[0].plot(out[0], out[1], label="Estimated", color=col[1])
         # axs[0].plot(inp[0], inp[1], label="Target Input", color=col[2])
-        axs[0].set_xlabel(x_label_base + str(i))
-        axs[0].set_xlim((min_x, max_x))
-        axs[0].set_ylim((min_y, max_y))
+        axs[0].set_xlabel(x_label_base + str(i) + ", Event: " + str(events[i]))
+        if not zoom: 
+            axs[0].set_xlim((min_x, max_x))
+            axs[0].set_ylim((min_y, max_y))
+            # Remove x and y ticks
+            axs[0].set_xticks([])
+            axs[0].set_yticks([])
         axs[0].set_title(f"Test loss")
         axs[0].legend()
-        # Remove x and y ticks
-        axs[0].set_xticks([])
-        axs[0].set_yticks([])
         # Remove the border (spines)
         axs[0].spines["top"].set_visible(False)
         axs[0].spines["right"].set_visible(False)
         axs[0].spines["left"].set_visible(False)
         axs[0].spines["bottom"].set_visible(False)
 
-        axs[1].barh([str(0.04 * k) for k in range_x], dis)  # Show time in seconds
+        axs[1].barh([str(0.04 * (k-1)) for k in range_x], dis)  # Show time in seconds
         axs[1].set_xlabel(f"Euclid-Distance in meter")
         axs[1].set_xlim((0, np.max(distance)))
         axs[1].set_ylabel("Time in seconds")  # Change ylabel to Time (s)
@@ -192,11 +207,14 @@ def animate(
 
     root_path = os.path.dirname(project.__file__)
     path = os.path.join(root_path, "..", "plots")
+    slowdown_factor = 10  # Increase slowdown factor to 5
+    path = os.path.join(path, scene, f"animation_{model_name}.gif")
     anim.save(
-        os.path.join(path, scene, f"animation_{model_name}.gif"),
+        path,
         writer="pillow",
-        fps=1 / time_step / 3,
+        fps=1 / time_step / slowdown_factor,
     )
+    print(f"gif saved in {path}")
 
 
 def draw(
@@ -207,6 +225,8 @@ def draw(
     device="cpu" if not torch.cuda.is_available() else "cuda",
     scene="NBA",
     frames=-1,
+    test_on_other_team=False,
+
 ):
     model.eval()
 
@@ -222,4 +242,5 @@ def draw(
         frame_size=frame_size,
         multi_object_function=config.func_color,
         scene=scene,
+        test_on_other_team=test_on_other_team,
     )

@@ -1,63 +1,42 @@
 from project.models.attention_based import TrafoLayer
 import torch
 import torch.nn as nn
+from torch.optim.lr_scheduler import CosineAnnealingWarmRestarts
 
 from project.models.one_step_model import OneStepModel
 import numpy as np
 from scipy.special import legendre
 
-
-def generate_legendre_positional_encodings(seq_len, d_model, degree):
-    positions = np.linspace(-1, 1, seq_len)
-    legendre_features = np.stack(
-        [legendre(d)(positions) for d in range(degree + 1)], axis=1
-    )
-
-    # Repeat or truncate Legendre features to match d_model
-    if d_model % (degree + 1) != 0:
-        raise ValueError(
-            "d_model must be a multiple of the number of Legendre features"
-        )
-
-    legendre_encodings = np.tile(legendre_features, (1, d_model // (degree + 1)))
-    return torch.tensor(legendre_encodings, dtype=torch.float32)
-
-
 def relative_values(x, target):
     x = x - target.unsqueeze(2)
     return x
-
 
 def pos_to_basket(x, basket_positions):
     pos = x.clone()
     dist = basket_positions - pos
     return dist
 
-
-class CNNEncoder(nn.Module):
-    def __init__(
-        self,
-        in_channels,
-        out_channels,
-        kernel_size,
-        stride,
-        padding,
-        padding_mode,
-    ):
+class CNNTemporalEncoder(nn.Module):
+    def __init__(self, in_channels, hidden_channels, kernel_sizes, strides, paddings):
         super().__init__()
-        self.conv = nn.Conv1d(
-            in_channels=in_channels,
-            out_channels=out_channels,
-            kernel_size=kernel_size,
-            stride=stride,
-            padding=padding,
-            padding_mode=padding_mode,
-        )
+        layers = []
+        current_channels = in_channels
+        for out_ch, k, s, p in zip(hidden_channels, kernel_sizes, strides, paddings):
+            layers.append(nn.Conv1d(
+                current_channels, out_ch, 
+                kernel_size=k, 
+                stride=s, 
+                padding=p, 
+                padding_mode="zeros"
+            ))
+            layers.append(nn.ReLU())
+            current_channels = out_ch
+        
+        self.encoder = nn.Sequential(*layers)
 
     def forward(self, x, statics):
         x = x.permute(0, 2, 1)
-        x = self.conv(x)
-
+        x = self.encoder(x)
         x = x.permute(0, 2, 1)
         return x
 
@@ -66,16 +45,6 @@ class OneStepTrafo(OneStepModel):
     def __init__(self, n_blocks=8, n_heads=6, ffn_hidden=1024, **kwargs):
         super().__init__(**kwargs)
         self.linear = nn.Linear(4 * 26, self.hidden_size)
-        self.pos_enc = generate_legendre_positional_encodings(
-            self.history_len, self.hidden_size, 15
-        )
-        # self.lmu = LMUFFT(
-        #    input_size=13 * 4,
-        #    hidden_size=self.hidden_size,
-        #    memory_size=256,
-        #    theta=25,
-        #    seq_len=self.history_len,
-        # )
         self.encoder = TrafoLayer(
             n_blocks=n_blocks,
             input_dim=self.hidden_size,
@@ -86,14 +55,14 @@ class OneStepTrafo(OneStepModel):
             generator=nn.Identity(),
             alibi=True,
         )
-        self.cnn = CNNEncoder(
+        self.cnn = CNNTemporalEncoder(
             in_channels=self.in_features,
-            out_channels=self.hidden_size,
-            kernel_size=3,
-            stride=1,
-            padding=1,
-            padding_mode="replicate",
+            hidden_channels=[64, 128, self.hidden_size],
+            kernel_sizes=[7, 5, 5],
+            strides=[1, 1, 1],
+            paddings=[0, 0, 0],  # no padding
         )
+
         self.fc_out = nn.Linear(
             self.hidden_size, self.prediction_len * self.output_size
         )
@@ -104,12 +73,10 @@ class OneStepTrafo(OneStepModel):
                 self.history_len, 1, 1
             )
         self.state = None
-        self.dropout = nn.Dropout(0.5)
 
     def forward(self, src, statics):
         out, _ = self.preprocess_data((src, statics))
         out = out.flatten(2, 3)
-        # out = self.lmu(out, self.state)[0]
         out = self.cnn(out, statics)
         out = self.encoder(out)[:, -1]
 
@@ -117,5 +84,19 @@ class OneStepTrafo(OneStepModel):
         return src.view(src.size(0), self.prediction_len, self.output_size)
 
     def configure_optimizers(self):
-        optimizer = torch.optim.AdamW(self.parameters(), lr=1e-3, weight_decay=1e-5)
-        return optimizer
+        optimizer = torch.optim.AdamW(self.parameters(), lr=3e-4, weight_decay=1e-3)
+        # scheduler for the transformer model with warmup steps (regression)
+        scheduler = CosineAnnealingWarmRestarts(
+            optimizer, 
+            T_0=1134,   # ~3 epochs
+            T_mult=1,   # Constant restart interval length
+            eta_min=1e-6
+        )
+        return {
+            "optimizer": optimizer,
+            "lr_scheduler": {
+                "scheduler": scheduler,
+                "interval": "step",
+                "frequency": 1,
+        }
+    }

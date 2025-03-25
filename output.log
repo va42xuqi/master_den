@@ -1,0 +1,5 @@
+srun: job 78408 queued and waiting for resources
+srun: Job allocation 78407 has been revoked
+srun: Force Terminated job 78407
+onda3/bin/python: can't open file '/data/beegfs/home/gosalcds/master_den/train.py': [Errno 2] No such file or directory
+srun: error: hpc-mdc-03: task 0: Exited with exit code 2

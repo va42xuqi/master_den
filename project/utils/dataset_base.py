@@ -67,7 +67,7 @@ class CustomDataloader(pl.LightningDataModule):
             steps_in = self.dataset.steps_in
             steps_out = self.dataset.steps_out
             transform = self.dataset.transform
-            print("Dataset loaded from: " + path)
+            #print("Dataset loaded from: " + path)
         else:
             self.data_dir_list = data_dir_list
             self.min_sequence_length = min_sequence_length

@@ -180,13 +180,16 @@ def get_dataloader(mode="train", arch="lstm", min_sequence_length=MIN_SEQUENCE_L
     )
 
 
-def func_color(axs, i, input_plot, target_plot, rest):
+def func_color(axs, i, input_plot, target_plot, rest, zoom=False):
+    # If zoom is off, plot all players as before
+    if zoom and i > 0:
+        return
     if i == 0:
         axs.plot(
             target_plot[0, 0, :],
             target_plot[0, 1, :],
             label="Ground Truth",
-            color="green",
+            color="lightgreen",
         )
         axs.plot(
             input_plot[0, 0, :],

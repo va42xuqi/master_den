@@ -11,62 +11,44 @@ from ..utils import (
 )
 from torch import nn
 import torch
-from codecarbon import EmissionsTracker
+import logging
+logging.basicConfig(level=logging.INFO)
 
 
 def get_angular_error(y, y_hat):
-    """
-    Calculate the angular error between the predicted and ground truth velocity vectors.
+    dot_product = torch.sum(y_hat * y, dim=0)
+    cross_product = y_hat[0] * y[1] - y_hat[1] * y[0]
 
-    Parameters:
-    y (torch.Tensor): Ground truth velocity vectors of shape (batch_size, seq_length, n, 2)
-    y_hat (torch.Tensor): Predicted velocity vectors of shape (batch_size, seq_length, n, 2)
+    magnitude_x = torch.norm(y_hat, dim=0)
+    magnitude_y = torch.norm(y, dim=0)
 
-    Returns:
-    torch.Tensor: Angular error between the predicted and ground truth velocity vectors.
-    """
-    # Calculate the dot product between the predicted and ground truth velocity vectors
-    dot_product = torch.sum(y * y_hat, dim=-2)
+    cos_angle = dot_product / (magnitude_x * magnitude_y).clamp(min=1e-8)
+    cos_angle = torch.clamp(cos_angle, -1.0, 1.0)
 
-    # Calculate the magnitudes of the predicted and ground truth velocity vectors
-    magnitude_y = torch.norm(y, dim=-2)
-    magnitude_y_hat = torch.norm(y_hat, dim=-2)
+    angle = torch.where(
+        (magnitude_x < 1e-8) | (magnitude_y < 1e-8),
+        torch.zeros_like(cos_angle),
+        torch.acos(cos_angle)
+    )
+    angle = torch.where(cross_product < 0, -angle, angle)
 
-    # Calculate the cosine similarity between the predicted and ground truth velocity vectors
-    cosine_similarity = dot_product / (magnitude_y * magnitude_y_hat + 1e-10)
+    average_angular_error = torch.mean(angle, dim=-1)
+    return average_angular_error, angle
 
-    # Clamp the cosine similarity to the valid range [-1, 1]
-    cosine_similarity = torch.clamp(cosine_similarity, min=-1, max=1)
-
-    # Calculate the angular error between the predicted and ground truth velocity vectors
-    angular_error = torch.acos(cosine_similarity)
-
-    return angular_error
-
-
-def random_rotate_blocks(tensor, dim=2, test_on_other_team=False, shuffle = True):
-    """
-    Randomly rotate blocks along the specified dimension.
-
-    Parameters:
-    tensor (torch.Tensor): Input tensor of shape (batch_size, seq_length, n, ...)
-    dim (int): Dimension to rotate along. Default is 2.
-
-    Returns:
-    torch.Tensor: Tensor with randomly rotated blocks.
-    """
-    # Split the tensor along the specified dimension
+def random_rotate_blocks(tensor, dim=2, test_on_other_team=False, shuffle=True):
     first_half, second_half = torch.chunk(tensor, 2, dim=dim)
 
-    # Randomly permute elements within each half along the specified dimension
-    first_half_permuted = first_half[:, torch.randperm(first_half.size(dim))]
-    second_half_permuted = second_half[:, torch.randperm(second_half.size(dim))]
+    if shuffle:
+        indices_first = torch.randperm(first_half.size(dim), device=tensor.device)
+        indices_second = torch.randperm(second_half.size(dim), device=tensor.device)
 
-    # Concatenate the randomly permuted halves to form the final tensor
+        first_half = first_half.index_select(dim, indices_first)
+        second_half = second_half.index_select(dim, indices_second)
+
     if test_on_other_team:
         rotated_tensor = torch.cat((second_half, first_half), dim=dim)
     else:
-        rotated_tensor = torch.cat((first_half_permuted, second_half_permuted), dim=dim)
+        rotated_tensor = torch.cat((first_half, second_half), dim=dim)
 
     return rotated_tensor
 
@@ -82,10 +64,6 @@ def pos_to_basket(x, basket_positions):
     pos = x.clone()
     dist = basket_positions - pos
     return dist
-
-
-def importance(x, a=3, b=3):
-    pass
 
 
 def has_ball_flags(ball, players):
@@ -129,15 +107,6 @@ class OneStepModel(pl.LightningModule):
         self.get_goal_position = config.get_goal_position
         self.in_features = 4 * (self.num_players + has_ball + 2 * has_goals)
         self.has_goals = has_goals
-        self.train_tracker = EmissionsTracker(
-            log_level="error", measure_power_secs=10, tracking_mode="process"
-        )
-        self.val_tracker = EmissionsTracker(
-            log_level="error", measure_power_secs=10, tracking_mode="process"
-        )
-        self.test_tracker = EmissionsTracker(
-            log_level="error", measure_power_secs=10, tracking_mode="process"
-        )
 
         basket = torch.tensor(self.get_goal_position())
         basket_vel = torch.zeros_like(basket)
@@ -153,80 +122,6 @@ class OneStepModel(pl.LightningModule):
 
     def forward(self, src, statics):
         pass
-
-    def on_train_start(self):
-        self.train_tracker.start_task("train")
-
-    def on_train_end(self):
-        emissions = self.train_tracker.stop_task("train")
-
-        # Extract relevant metrics from EmissionsData
-        total_energy = emissions.energy_consumed  # Total energy consumed in kWh
-        gpu_energy = emissions.gpu_energy  # GPU energy consumption in kWh
-        cpu_energy = emissions.cpu_energy  # CPU energy consumption in kWh
-        ram_energy = emissions.ram_energy  # RAM energy consumption in kWh
-
-        # Log scalar values
-        if self.logger:
-            self.logger.experiment.log(
-                {
-                    "Total energy consumption (kWh)": total_energy,
-                    "GPU energy consumption (kWh)": gpu_energy,
-                    "CPU energy consumption (kWh)": cpu_energy,
-                    "RAM energy consumption (kWh)": ram_energy,
-                }
-            )
-
-    def on_validation_epoch_start(self):
-        self.val_tracker.start_task("validation")
-
-    def on_validation_epoch_end(self):
-        emissions = self.val_tracker.stop_task("validation")
-
-        # Extract relevant metrics from the EmissionsData object
-        total_energy = emissions.energy_consumed  # Total energy consumed in kWh
-        gpu_energy = emissions.gpu_energy  # GPU energy consumption in kWh
-        cpu_energy = emissions.cpu_energy  # CPU energy consumption in kWh
-        ram_energy = emissions.ram_energy  # RAM energy consumption in kWh
-
-
-        # Log scalar values
-        self.log_dict(
-            {
-                "Total energy consumption (kWh)": total_energy,
-                "GPU energy consumption (kWh)": gpu_energy,
-                "CPU energy consumption (kWh)": cpu_energy,
-                "RAM energy consumption (kWh)": ram_energy,
-            },
-            on_step=False,
-            on_epoch=True,
-            prog_bar=True,
-        )
-
-    def on_test_epoch_start(self):
-        self.test_tracker.start_task("test")
-
-    def on_test_epoch_end(self):
-        emissions = self.test_tracker.stop_task("test")
-        
-        # Extract relevant metrics from the EmissionsData object
-        total_energy = emissions.energy_consumed  # Total energy consumed in kWh
-        gpu_energy = emissions.gpu_energy  # GPU energy consumption in kWh
-        cpu_energy = emissions.cpu_energy  # CPU energy consumption in kWh
-        ram_energy = emissions.ram_energy  # RAM energy consumption in kWh
-
-        # Log scalar values
-        self.log_dict(
-            {
-                "Total energy consumption (kWh)": total_energy,
-                "GPU energy consumption (kWh)": gpu_energy,
-                "CPU energy consumption (kWh)": cpu_energy,
-                "RAM energy consumption (kWh)": ram_energy,
-            },
-            on_step=False,
-            on_epoch=True,
-            prog_bar=True,
-        )
 
     def step(self, batch, num_batches=10, shuffle=True, test_on_other_team=False):
         known_features, _, statics = batch
@@ -326,12 +221,16 @@ class OneStepModel(pl.LightningModule):
     def test_step(self, batch, batch_idx, test_on_other_team, **kwargs):
         loss, output, x, y = self.step(batch, shuffle=False, num_batches=-1, test_on_other_team=test_on_other_team)
 
-        z = y[:, 0]
+        z = y[:, 0]  # Ground truth positions
 
-        angular_error = get_angular_error(z, output).detach().cpu()
+        output = output.cpu()  # Predicted positions
+        z = z.cpu()  # Ground truth positions
 
-        FRE = angular_error[:, -1] * 180 / np.pi  # Final Radian Error
-        ARE = angular_error.detach() * 180 / np.pi  # Average Radian Error
+        # Calculate angular errors
+        ARE, angular_error = get_angular_error(z, output)
+
+        # Final angular error for the last prediction step
+        FRE = angular_error[:, 49]  # Shape: (batch_size,)
 
         output_pos, predict_pos = self.get_pos(z, output, pred_len=self.prediction_len)
 
@@ -373,7 +272,7 @@ class OneStepModel(pl.LightningModule):
             .repeat(src.size(0), 1, 1, 1)
         )
         sign = statics[:, 0, 0] * 2 - 1
-        basket * sign.unsqueeze(-1).unsqueeze(-1).unsqueeze(-1)
+        basket = basket * sign.unsqueeze(-1).unsqueeze(-1).unsqueeze(-1)
         out = torch.cat([src, basket], dim=2)
         return out, statics
 

@@ -41,8 +41,8 @@ class FixProgressBar(TQDMProgressBar):
 
 def get_callbacks(filename: str) -> [Callback]:
     early_stopping_callback = EarlyStopping(
-        monitor="val/ADE",  # Metric to monitor for early stopping
-        patience=20,  # Number of epochs with no improvement after which training will be stopped
+        monitor="val/FDE",  # Metric to monitor for early stopping
+        patience=10,  # Number of epochs with no improvement after which training will be stopped
         verbose=True,  # Prints early stopping updates
     )
     checkpoint_callback = ModelCheckpoint(
@@ -50,7 +50,7 @@ def get_callbacks(filename: str) -> [Callback]:
         # unique name with score
         # filename=filename + "-{val/ADE:.2f}",
         filename=filename,
-        monitor="val/ADE",
+        monitor="val/FDE",
         mode="min",
         save_top_k=1,  # Save the top 1 best model
         verbose=True,

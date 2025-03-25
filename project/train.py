@@ -185,6 +185,7 @@ def load(
             config=config,
             frames=1000,
             scene=scene,
+            test_on_other_team=test_on_other_team,
         )
 
     if mode == "benchmark":
@@ -204,10 +205,10 @@ def load(
 
 if __name__ == "__main__":
     arg = argparse.ArgumentParser()
-    arg.add_argument("--arch", type=str, default="oslstm")
-    arg.add_argument("--mode", type=str, default="benchmark")
-    arg.add_argument("--scene", type=str, default="SOC")
-    arg.add_argument("--pred_len", type=int, default=100)
+    arg.add_argument("--arch", type=str, default="ostf")
+    arg.add_argument("--mode", type=str, default="train")
+    arg.add_argument("--scene", type=str, default="NBA")
+    arg.add_argument("--pred_len", type=int, default=50)
     arg.add_argument("--hist_len", type=int, default=50)
     arg.add_argument("--pretrain", action="store_true")
     arg.add_argument("--fine_tune", action="store_true")

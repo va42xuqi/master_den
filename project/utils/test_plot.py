@@ -5,6 +5,21 @@ import torch
 import matplotlib.pyplot as plt
 import pandas as pd
 
+import logging
+
+
+# Configure logging
+logging.basicConfig(
+    level=logging.DEBUG,  # Set the lowest level you want to capture
+    format="%(message)s",  # Simplify the log format
+    handlers=[logging.StreamHandler()],  # Output to console
+)
+
+# Suppress logs from external libraries
+logging.getLogger("matplotlib").setLevel(logging.CRITICAL)
+logging.getLogger("torch").setLevel(logging.CRITICAL)
+logging.getLogger("lightning.pytorch").setLevel(logging.CRITICAL)
+
 
 def moving_average(data, window_size=5):
     return np.convolve(data, np.ones(window_size) / window_size, mode="same")
@@ -31,7 +46,7 @@ def plot_error_angular_error(distances, angles, scene, model_name, file_suffix):
     dir = f"../benchmark/{scene}/{hist}/{model_name}{file_suffix}"
     os.makedirs(dir, exist_ok=True)
     plt.figure(figsize=(10, 10))
-    plt.plot(angles, distances, "o")
+    plt.plot(angles * 180 / np.pi, distances, "o")
     plt.title("Error of the model")
     plt.xlabel("Angular distance")
     plt.ylabel("Error")
@@ -55,19 +70,38 @@ def plot(
     os.makedirs(dir, exist_ok=True)
 
     plt.figure(figsize=(10, 10))
-    plt.errorbar(time_axis, error_mean, yerr=error_var, fmt="o")
+    plt.plot(time_axis, error_mean, label="Mean Error", color="blue")  # Mean line
+    plt.fill_between(
+        time_axis,
+        np.maximum(error_mean - error_var, 0),  # Cut off at 0 for the lower bound
+        error_mean + error_var,
+        color="blue",
+        alpha=0.3,  # Opacity of the fill
+        label="Error Range",
+    )
     plt.title("Error of the model")
     plt.xlabel("Time step")
     plt.ylabel("Error")
+    plt.legend()
     plt.savefig(f"{dir}/error.png")
+    plt.close()
 
     plt.figure(figsize=(10, 10))
-    plt.errorbar(time_axis, angular_mean, yerr=angular_var, fmt="o")
+    plt.plot(time_axis, angular_mean * 180 / np.pi, label="Mean Angular Error", color="green")
+    plt.fill_between(
+        time_axis,
+        np.maximum((angular_mean - angular_var) * 180 / np.pi, 0),  # Cut off at 0 for the lower bound
+        (angular_mean + angular_var) * 180 / np.pi,
+        color="green",
+        alpha=0.3,
+        label="Angular Error Range",
+    )
     plt.title("Angular Error of the model")
     plt.xlabel("Time step")
-    plt.ylabel("Error")
+    plt.ylabel("Error (degrees)")
+    plt.legend()
     plt.savefig(f"{dir}/angular_error.png")
-
+    plt.close()
     # Save mean and variance of angular error to a file
     dir = f"../benchmark/{scene}/{hist_len}/{model_name}{file_suffix}"
     os.makedirs(dir, exist_ok=True)
@@ -110,6 +144,9 @@ def visualize_predictions(
     error_list = []
     angular_error_list = []
 
+    total_unsplit_samples = len(test_dataloader)
+    total_split_samples = 0
+
     for i, sample in enumerate(test_dataloader):
         if num_samples is not None and i == num_samples:
             break
@@ -119,6 +156,8 @@ def visualize_predictions(
             FDE, ADE, NL_ADE, MSE, MAE, FRE, ARE, loss_list, angular_error, _, _, _ = (
                 model.test_step(batch, -1, test_on_other_team=test_on_other_team)
             )
+
+        total_split_samples += len(loss_list)
 
         FDE_list.append(FDE)
         ADE_list.append(ADE)
@@ -153,11 +192,12 @@ def visualize_predictions(
     error_var = error.std(axis=0)
 
     angular_error = np.concatenate(angular_error_list, axis=0)
+    angular_error = np.abs(angular_error)
     angular_mean = angular_error.mean(axis=0)
     angular_var = angular_error.std(axis=0)
 
     # Capture metrics at specific time steps
-    time_steps = [24, 49, 74, 99]
+    time_steps = [24, 49]
     error_at_steps = [
         error_mean[ts] if ts < len(error_mean) else None for ts in time_steps
     ]
@@ -238,8 +278,6 @@ def visualize_predictions(
 
     print_error_at_time_step(24)
     print_error_at_time_step(49)
-    print_error_at_time_step(74)
-    print_error_at_time_step(99)
     
     print("Metrics: ")
     print("\u2500" * 30)
@@ -253,6 +291,13 @@ def visualize_predictions(
     print("\u2500" * 30)
 
     time_axis = np.arange(0, error_mean.shape[0]) * time_step
+    
+    # only first 2 seconds
+    time_axis = time_axis[:50]
+    error_mean = error_mean[:50]
+    error_var = error_var[:50]
+    angular_mean = angular_mean[:50]
+    angular_var = angular_var[:50]
 
     print("start plotting", file=original_stdout)
 
